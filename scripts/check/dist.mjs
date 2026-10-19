@@ -17,8 +17,8 @@ const DIST = path.join(ROOT, 'site/.vitepress/dist')
 
 // Links from outside this repo that must keep working. GitHub code search finds links only to the home page
 // (UrbanMapper's README and docs, the PIs' sites, the UrbanAccess 2024 workshop site); the NSF reports cite the
-// software and publications pages.
-const INBOUND = ['/', '/software/', '/publications/']
+// software and impact pages.
+const INBOUND = ['/', '/software/', '/publications/', '/impact/']
 
 function legacyUrls() {
   return fs
@@ -95,8 +95,23 @@ function checkDisk() {
     if (!file) problems.push(`sitemap lists a missing page: ${loc}`)
     else if (redirectTarget(fs.readFileSync(file, 'utf8'))) problems.push(`sitemap lists a redirect stub: ${loc}`)
   }
+  problems.push(...checkImpactJson())
   console.log(`dist: ${files.length} HTML files, ${links} internal links, ${legacyUrls().length} legacy URLs checked`)
   return problems
+}
+
+// Rows that pages elsewhere may read from /impact/impact.json, as www.evl.uic.edu reads urbantk.org's.
+const IMPACT_JSON_ROWS = ['downloads-month', 'hf-downloads-month', 'publications']
+
+function checkImpactJson() {
+  const file = path.join(DIST, 'impact', 'impact.json')
+  if (!fs.existsSync(file)) return ['/impact/impact.json is missing']
+  const { years, rows } = JSON.parse(fs.readFileSync(file, 'utf8'))
+  return IMPACT_JSON_ROWS.flatMap((id) => {
+    const row = rows.find((r) => r.id === id)
+    if (!row) return [`/impact/impact.json has no ${id} row`]
+    return row.values.length === years.length ? [] : [`/impact/impact.json: ${id} has ${row.values.length} values for ${years.length} years`]
+  })
 }
 
 async function checkLive(base) {

@@ -85,6 +85,81 @@ export const newsSchema = z
   })
   .strict()
 
+const day = z.coerce.date().transform((d) => d.toISOString().slice(0, 10))
+
+const reported = z
+  .object({
+    name: z.string(),
+    detail: z.string().optional(),
+    url: z.string().optional(),
+    date: day.optional(),
+    year: z.number().int().positive().optional(),
+    attendance: z.number().int().nonnegative().optional(),
+  })
+  .strict()
+  .refine((item) => item.date || item.year, 'an item needs a date or an award year')
+
+// A Hugging Face repository as kind/owner/name; `*` in the name matches any run of characters.
+const hfRepo = z.string().regex(/^(datasets|models)\/[\w.-]+\/[\w.*-]+$/, 'expected datasets/<owner>/<name> or models/<owner>/<name>')
+
+// site/data/impact.yaml: what /impact/ counts, and the rows only the team can report.
+export const impactSchema = z
+  .object({
+    award: z
+      .object({
+        start: day.refine((d) => d.endsWith('-01'), 'the award must start on the first of a month'),
+        years: z.number().int().positive(),
+      })
+      .strict(),
+    npmOrg: z.string().optional(),
+    npmSkip: z.array(z.string()).default([]),
+    // The repositories and packages behind the software rows; `software` is an id in software.yaml.
+    software: z.array(
+      z
+        .object({
+          software: id,
+          repos: z.array(z.string().regex(/^[\w.-]+\/[\w.-]+$/, 'expected owner/name')).min(1),
+          pypi: z.array(z.string()).default([]),
+          npm: z.array(z.string()).default([]),
+          huggingface: z.array(hfRepo).default([]),
+        })
+        .strict(),
+    ),
+    internal: z.array(
+      z.object({ id: z.string(), name: z.string(), domains: z.array(z.string()), profile: z.array(z.string()) }).strict(),
+    ),
+    people: z.array(z.object({ ids: z.array(z.string()).min(1), institution: z.string().optional() }).strict()).default([]),
+    curio: z
+      .object({
+        repo: z.string(),
+        demos: z.array(z.number().int()),
+        inPapers: z.array(z.number().int()).default([]),
+      })
+      .strict(),
+    // Keys in papers.bib whose use cases are not urban, so the Use cases row leaves them out.
+    nonUrbanPapers: z.array(z.string()).default([]),
+    instances: z.array(z.string().url()).default([]),
+    history: z.string().url(),
+    // The day history.json was first published; from then on a missing history fails the collection instead of
+    // starting the counts over.
+    historySince: day.optional(),
+    // All-time Hugging Face downloads of each repository on past days, from before the history began
+    // (scripts/impact/hf-backfill.mjs reads them from the public cfahlgren1/hub-stats snapshots).
+    huggingfaceSnapshots: z
+      .array(z.object({ day, source: z.string(), downloads: z.record(z.string(), z.number().int().nonnegative()) }).strict())
+      .default([]),
+    deployments: z.array(reported).default([]),
+    datasets: z.array(reported).default([]),
+    workshops: z.array(reported).default([]),
+    hackathons: z.array(reported).default([]),
+    tutorials: z.array(reported).default([]),
+    courses: z.array(reported).default([]),
+    internships: z.array(reported).default([]),
+  })
+  .strict()
+
+export type ImpactConfig = z.infer<typeof impactSchema>
+
 export function describe(error: z.ZodError): string {
   return z.prettifyError(error)
 }

@@ -16,7 +16,19 @@ jobs:
 
       - run: npm ci
 
-      # Fails on dead Markdown links and invalid frontmatter, papers.bib, software.yaml or team.yaml.
+      # The blob-less clones of the impact repositories, so a run only fetches their new commits.
+      - uses: actions/cache@v6
+        with:
+          path: .cache/impact/repos
+          key: impact-repos-${{ github.run_id }}
+          restore-keys: impact-repos-
+
+      # The numbers behind /impact/, which the build needs.
+      - run: npm run impact
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      # Fails on dead Markdown links and invalid frontmatter, papers.bib, software.yaml, team.yaml or impact.yaml.
       - run: npm run build
 
       # Links in the built HTML, the old WordPress URLs, redirects and media budgets.

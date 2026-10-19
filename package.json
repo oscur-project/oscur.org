@@ -6,7 +6,8 @@
     "dev": "vitepress dev site",
     "build": "vitepress build site",
     "preview": "vitepress preview site",
-    "check": "node scripts/check/dist.mjs && node scripts/check/media.mjs"
+    "check": "node scripts/check/dist.mjs && node scripts/check/media.mjs",
+    "impact": "node scripts/impact/collect.mjs"
   },
   "devDependencies": {
     "@retorquere/bibtex-parser": "^11.0.0",
@@ -15,6 +16,7 @@
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.3.2",
     "vitepress": "^1.6.4",
+    "write-excel-file": "^4.1.1",
     "zod": "^4.6.5"
   }
 }

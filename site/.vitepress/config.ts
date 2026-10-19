@@ -5,6 +5,8 @@ import { defineConfig } from 'vitepress'
 import { SITE } from './site'
 import { writeFeed } from './theme/node/feed'
 import { pageDescription, socialHead } from './theme/node/head'
+import { loadImpact } from './theme/node/impact'
+import { writeImpactHistory, writeImpactJson, writeImpactSheet } from './theme/node/impact-sheet'
 import { loadNews } from './theme/node/news'
 import { loadRedirects, writeRedirects } from './theme/node/redirects'
 import { loadSoftware, loadTopics } from './theme/node/software'
@@ -59,6 +61,7 @@ export default defineConfig({
       { text: 'News & Events', link: '/news/', activeMatch: '^/(news|\\d{4})/' },
       { text: 'Partners', link: '/partners/' },
       { text: 'Team', link: '/team/' },
+      { text: 'Impact', link: '/impact/' },
       { text: 'Newsletter', link: '/newsletter/' },
     ],
     outline: false,
@@ -84,6 +87,10 @@ export default defineConfig({
     const news = loadNews()
     writeRedirects(siteConfig.outDir, loadRedirects(news), SITE.hostname)
     writeFeed(siteConfig.outDir, news, SITE)
+    const impact = loadImpact()
+    await writeImpactSheet(siteConfig.outDir, impact)
+    writeImpactJson(siteConfig.outDir, impact)
+    writeImpactHistory(siteConfig.outDir)
     // WordPress published its sitemap at /wp-sitemap.xml; keep that URL alive for crawlers that cached it.
     const sitemap = path.join(siteConfig.outDir, 'sitemap.xml')
     await completeFile(sitemap, '</urlset>')
