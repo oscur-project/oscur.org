@@ -342,8 +342,16 @@ async function registered(base) {
 // impact.yaml says when the history began (`historySince`), a missing history is an error rather than a fresh
 // start, so a passing outage cannot erase the record.
 async function history(url, since) {
-  const res = await tried('impact history', () => get(url, {}, { missingOk: !since }))
-  return res ? await res.json() : []
+  try {
+    const res = await tried('impact history', () => get(url, {}, { missingOk: !since }))
+    return res ? await res.json() : []
+  } catch (error) {
+    // Before historySince, the history may not be readable yet (the site's first deploy, a domain that has just
+    // moved): start a new one. After, any failure stops the run.
+    if (since) throw error
+    console.log(`impact history: ${error.message}; starting a new history`)
+    return []
+  }
 }
 
 // The datasets or models an owner publishes on Hugging Face, with the day each was created, its downloads in
