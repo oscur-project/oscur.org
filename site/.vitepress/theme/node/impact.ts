@@ -298,7 +298,8 @@ export function loadImpact(): Impact {
   const metrics = readMetrics()
   const today = metrics.collected.slice(0, 10)
   const windows = windowsOf(config.award, today)
-  const papers = loadPapers()
+  // OSCUR's papers: the earlier papers of its software (listed = {false}) count in no row.
+  const papers = loadPapers().filter((p) => p.listed)
   const software = new Map(loadSoftware().map((s) => [s.id, s]))
   for (const s of config.software) {
     if (!software.has(s.software)) throw new Error(`site/data/impact.yaml: unknown software "${s.software}" (see site/data/software.yaml)`)

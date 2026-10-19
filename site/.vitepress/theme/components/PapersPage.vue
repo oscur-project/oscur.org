@@ -9,18 +9,20 @@ interface Topic {
   label: string
 }
 
-// Every paper, newest first, grouped by year. The full list is prerendered; the topic filter (also reachable
-// as /publications/?topic=<id>) only applies once the page has loaded.
+// Every OSCUR paper, newest first, grouped by year; the earlier papers of its software (listed = {false}) are on
+// their Software cards only. The full list is prerendered; the topic filter (also reachable as
+// /publications/?topic=<id>) only applies once the page has loaded.
 const { theme } = useData()
 const active = ref<string | null>(null)
+const listed = papers.filter((paper) => paper.listed)
 
 // The Software page's topics, in their order, that have at least one paper.
 const filters = computed(() =>
-  (theme.value.oscur.topics as Topic[]).filter((t) => papers.some((paper) => paper.topics.includes(t.id))),
+  (theme.value.oscur.topics as Topic[]).filter((t) => listed.some((paper) => paper.topics.includes(t.id))),
 )
 
 const years = computed(() => {
-  const shown = active.value ? papers.filter((p) => p.topics.includes(active.value!)) : papers
+  const shown = active.value ? listed.filter((p) => p.topics.includes(active.value!)) : listed
   const groups = new Map<number, typeof papers>()
   for (const paper of shown) groups.set(paper.year, [...(groups.get(paper.year) ?? []), paper])
   return [...groups]

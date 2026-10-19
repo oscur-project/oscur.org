@@ -4,7 +4,7 @@ import { parse, type Entry } from '@retorquere/bibtex-parser'
 import { DATA_DIR } from './paths'
 
 // Fields that only this site reads. They are removed from the BibTeX that visitors copy.
-export const SITE_FIELDS = ['software', 'topic', 'presented', 'status', 'page', 'pdf', 'code', 'video', 'award']
+export const SITE_FIELDS = ['software', 'topic', 'presented', 'status', 'listed', 'page', 'pdf', 'code', 'video', 'award']
 
 export interface Paper {
   key: string
@@ -26,6 +26,9 @@ export interface Paper {
   award: string | null
   // For instance "To appear", shown as a badge after the venue.
   status: string | null
+  // False (`listed = {false}`) for an earlier paper of OSCUR's software, which is not an OSCUR publication: only
+  // its software's cards show it, not /publications/ nor /impact/.
+  listed: boolean
   // Software ids (site/data/software.yaml); the paper is listed on their cards and filed under their topics.
   software: string[]
   // Topic ids from the `topic` field; papers.data.ts adds the topics of the paper's software.
@@ -94,6 +97,9 @@ function toPaper(entry: Entry): Paper {
   const year = Number.parseInt(f.year ?? f.date ?? '', 10)
   if (!Number.isFinite(year)) throw new Error(`papers.bib: ${entry.key} has no year`)
   if (!f.title) throw new Error(`papers.bib: ${entry.key} has no title`)
+  if (f.listed !== undefined && !['true', 'false'].includes(clean(f.listed))) {
+    throw new Error(`papers.bib: ${entry.key} has listed = {${f.listed}}; expected true or false`)
+  }
   const arxiv =
     (f.archiveprefix ?? '').toLowerCase() === 'arxiv' || (f.eprinttype ?? '').toLowerCase() === 'arxiv'
       ? clean(f.eprint)
@@ -118,6 +124,7 @@ function toPaper(entry: Entry): Paper {
     page: f.page ?? null,
     award: f.award ? clean(f.award) : null,
     status: f.status ? clean(f.status) : null,
+    listed: clean(f.listed) !== 'false',
     software: list(f.software),
     topics: list(f.topic),
     bibtex: stripFields(entry.input, SITE_FIELDS),

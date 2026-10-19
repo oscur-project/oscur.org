@@ -4,6 +4,7 @@
 %   topic     = topic id (site/data/topics.yaml), for a paper without software
 %   presented = conference where a journal paper was presented
 %   status    = a badge after the venue, e.g. To appear
+%   listed    = false for an earlier paper of OSCUR's software (end of file): on its cards, not on /publications/ or /impact/
 %   page      = project page
 %   code, pdf, video, award
 
@@ -14,7 +15,7 @@
   journal       = {IEEE Transactions on Visualization and Computer Graphics},
   eprint        = {2607.25124},
   archiveprefix = {arXiv},
-  software      = {urbantrace},
+  software      = {urbantrace, atlas-profiler},
   presented     = {IEEE VIS 2026},
   status        = {To appear},
   code          = {https://github.com/VIDA-NYU/urbanTrace}
@@ -399,4 +400,60 @@
   school = {New York University},
   year   = {2025},
   topic  = {vis}
+}
+
+% Earlier papers of OSCUR's software. They are not OSCUR publications: their software's cards list them, but
+% /publications/ does not, and the impact page does not count them.
+
+@article{moreira2025curio,
+  title         = {Curio: A Dataflow-Based Framework for Collaborative Urban Visual Analytics},
+  volume        = {31},
+  doi           = {10.1109/tvcg.2024.3456353},
+  number        = {1},
+  journal       = {IEEE Transactions on Visualization and Computer Graphics},
+  publisher     = {Institute of Electrical and Electronics Engineers (IEEE)},
+  author        = {Moreira, Gustavo and Hosseini, Maryam and Veiga, Carolina and Alexandre, Lucas and Colaninno, Nicola and de Oliveira, Daniel and Ferreira, Nivan and Lage, Marcos and Miranda, Fabio},
+  year          = {2025},
+  month         = jan,
+  pages         = {1224--1234},
+  eprint        = {2408.06139},
+  archiveprefix = {arXiv},
+  software      = {curio},
+  presented     = {IEEE VIS 2024},
+  listed        = {false}
+}
+
+@article{moreira2024utk,
+  title         = {The Urban Toolkit: A Grammar-Based Framework for Urban Visual Analytics},
+  volume        = {30},
+  doi           = {10.1109/tvcg.2023.3326598},
+  number        = {1},
+  journal       = {IEEE Transactions on Visualization and Computer Graphics},
+  publisher     = {Institute of Electrical and Electronics Engineers (IEEE)},
+  author        = {Moreira, Gustavo and Hosseini, Maryam and Alam Nipu, Md Nafiul and Lage, Marcos and Ferreira, Nivan and Miranda, Fabio},
+  year          = {2024},
+  month         = jan,
+  pages         = {1402--1412},
+  eprint        = {2308.07769},
+  archiveprefix = {arXiv},
+  software      = {utk},
+  presented     = {IEEE VIS 2023},
+  listed        = {false}
+}
+
+@article{castelo2021auctus,
+  title     = {Auctus: A Dataset Search Engine for Data Discovery and Augmentation},
+  volume    = {14},
+  issn      = {2150-8097},
+  doi       = {10.14778/3476311.3476346},
+  number    = {12},
+  journal   = {Proceedings of the VLDB Endowment},
+  publisher = {Association for Computing Machinery (ACM)},
+  author    = {Castelo, Sonia and Rampin, Rémi and Santos, Aécio and Bessa, Aline and Chirigati, Fernando and Freire, Juliana},
+  year      = {2021},
+  month     = jul,
+  pages     = {2791--2794},
+  software  = {auctus},
+  presented = {VLDB 2021},
+  listed    = {false}
 }

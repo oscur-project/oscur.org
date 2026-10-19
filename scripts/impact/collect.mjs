@@ -379,6 +379,7 @@ function recentEprints(start) {
   const first = Number(start.slice(0, 4)) * 12 + Number(start.slice(5, 7))
   const wanted = []
   for (const { key, fields } of library.entries) {
+    if (String(fields.listed ?? '').trim() === 'false') continue // an earlier paper of the software, not counted
     const eprint = typeof fields.eprint === 'string' ? fields.eprint.trim() : null
     if (!eprint || String(fields.archiveprefix ?? fields.eprinttype ?? '').toLowerCase() !== 'arxiv') continue
     const year = Number.parseInt(fields.year, 10)

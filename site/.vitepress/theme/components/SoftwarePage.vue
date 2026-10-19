@@ -24,6 +24,13 @@ function papersOf(keys: string[]) {
   return keys.map((key) => byKey.get(key)!).filter(Boolean)
 }
 
+// An OSCUR paper links to its entry on /publications/; an earlier paper of the software, to the paper itself.
+function paperHref(paper: Paper) {
+  if (paper.listed) return withBase(`/publications/#${paper.key}`)
+  if (paper.doi) return `https://doi.org/${paper.doi}`
+  return paper.arxiv ? `https://arxiv.org/abs/${paper.arxiv}` : (paper.url ?? undefined)
+}
+
 // "SIGMOD 2026" needs no ", 2026"; a paper of IEEE VIS 2025 in a 2026 issue keeps its year.
 function whereAndWhen(paper: Paper) {
   const where = paper.presented ?? paper.venue
@@ -65,7 +72,7 @@ function whereAndWhen(paper: Paper) {
           <SoftwareLinks :links="item.links" :name="item.name" />
           <ul v-if="item.papers.length" class="oscur-software-papers">
             <li v-for="paper in papersOf(item.papers)" :key="paper.key">
-              <a :href="withBase(`/publications/#${paper.key}`)">{{ paper.title }}</a>
+              <a :href="paperHref(paper)" :target="paper.listed ? undefined : '_blank'" :rel="paper.listed ? undefined : 'noopener'">{{ paper.title }}</a>
               <span>
                 {{ whereAndWhen(paper) }}<template v-if="paper.status"> · {{ paper.status }}</template>
               </span>

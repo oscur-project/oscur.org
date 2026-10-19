@@ -73,7 +73,7 @@ Then add the fields that only this site reads (they are removed from the BibTeX 
   archiveprefix = {arXiv},
 ```
 
-`pdf`, `video` and `award` are also available. Papers are grouped by the year of their issue; within a year they appear in the order of the file, "To appear" first. When a pending DOI starts to resolve (the file notes which), add it and drop `status`; the impact page counts a paper as a publication from then on.
+`pdf`, `video` and `award` are also available. A paper that describes one of the tools but is not an OSCUR publication, such as Curio's IEEE VIS 2024 paper, goes at the end of the file with `listed = {false}`: its software's card lists it, while the Publications and impact pages leave it out. Papers are grouped by the year of their issue; within a year they appear in the order of the file, "To appear" first. When a pending DOI starts to resolve (the file notes which), add it and drop `status`; the impact page counts a paper as a publication from then on.
 
 ## Add a news post
 
