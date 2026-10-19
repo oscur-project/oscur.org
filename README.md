@@ -94,7 +94,7 @@ Add `imageFit: contain` when the image is a logo, a flyer or a portrait that sho
 
 ## Add a person
 
-Add them to `site/data/team.yaml` with an `institution` and a `group` (PIs, research scientists, research staff, PhD students, students, interns), or `alumni: true` and a `note` on what they do now. PIs get a `photo` (a square WebP in `site/public/media/team/`). Author names in `papers.bib` that match a person's `name` or one of their `aliases` link to their `url`.
+Add them to `site/data/team.yaml` with an `institution` and a `group` (PIs, research scientists, PhD students), or `alumni: true` and a `note` on what they do now. PIs get a `photo` (a square WebP in `site/public/media/team/`). Author names in `papers.bib` that match a person's `name` or one of their `aliases` link to their `url`. Research staff, students and interns get `listed: false` instead of a group: the Team page leaves them out, but their names still match paper authors, and the impact page still counts their commits as OSCUR's.
 
 ## Diagrams and the emblem
 

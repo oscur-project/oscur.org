@@ -3,7 +3,7 @@
 # person's `name` or one of their `aliases` link to the person's `url`.
 #
 # person: id, name, url, institution (an id below), group (an id below), role, photo, note, alumni,
-# listed (false: linked from papers but not on /team/), aliases
+# listed (false: not on /team/, but still matched to authors in papers.bib and to commits on /impact/), aliases
 
 institutions:
   - { id: nyu, name: New York University, short: NYU, url: "https://www.nyu.edu/" }
@@ -18,10 +18,7 @@ institutions:
 groups:
   - { id: pis, label: PIs, cards: true }
   - { id: scientists, label: Research scientists }
-  - { id: staff, label: Research staff }
   - { id: phd, label: PhD students }
-  - { id: students, label: Undergraduate and high school students }
-  - { id: interns, label: Interns and visiting students }
 
 people:
   # PIs
@@ -77,16 +74,19 @@ people:
     photo: /media/team/jfroehlich.webp
     aliases: [Jon E. Froehlich]
 
+  # Research staff, students and interns are not on /team/ (listed: false); they stay here so that author names
+  # in papers.bib match them and their commits count as OSCUR's on /impact/.
+
   # Research staff
   - id: kfalcao
     name: Karla Falcão
     institution: uic
-    group: staff
+    listed: false
     role: Research software engineer
   - id: msaugstad
     name: Michael Saugstad
     institution: uw
-    group: staff
+    listed: false
     role: Research software engineer
     aliases: [Mikey Saugstad]
 
@@ -147,31 +147,31 @@ people:
   - id: lloch
     name: Logan Loch
     institution: uic
-    group: students
+    listed: false
   - id: sshannon
     name: Shaun Shannon
     institution: uic
-    group: students
+    listed: false
   - id: aquesada
     name: Andres Quesada
     institution: uic
-    group: students
+    listed: false
   - id: hmnnguyen
     name: Ho Minh Nhat Nguyen
     institution: uic
-    group: students
+    listed: false
   - id: dstyka
     name: Dominik Styka
     institution: uic
-    group: students
+    listed: false
   - id: jzhang
     name: Jasmine Zhang
     institution: uw
-    group: students
+    listed: false
   - id: jomeara
     name: John O’Meara
     institution: uw
-    group: students
+    listed: false
     note: Allen School from fall 2026
     aliases: [John S. O’Meara, John O'Meara, John S. O'Meara]
 
@@ -179,28 +179,28 @@ people:
   - id: rfilho
     name: Renzo Filho
     institution: uic
-    group: interns
+    listed: false
     note: University of São Paulo
   - id: lsouza
     name: Lyncoln Souza de Oliveira
     institution: uic
-    group: interns
+    listed: false
     note: Universidade Federal Fluminense
     aliases: [Lyncoln Oliveira]
   - id: lmelo
     name: Luiza Melo
     institution: uic
-    group: interns
+    listed: false
     note: Universidade Federal de Pernambuco
   - id: ybi
     name: Yangbo Bi
     institution: uic
-    group: interns
+    listed: false
     note: University of Birmingham
   - id: tnguyen
     name: Tuan Duc Nguyen
     institution: uic
-    group: interns
+    listed: false
 
   # Alumni
   - id: jrulff
