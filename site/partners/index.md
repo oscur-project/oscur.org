@@ -1,6 +1,6 @@
 ---
 title: Partners
-description: The advisory board, agencies, organizations, researchers and companies that collaborate with OSCUR.
+description: The advisory board, partner institutions, agencies, organizations, researchers and companies that collaborate with OSCUR.
 ---
 
 # Partners
@@ -27,6 +27,15 @@ description: The advisory board, agencies, organizations, researchers and compan
 - Terri Matthews; NYC Department of Design and Construction
 - Erin Aleman; Chicago Metropolitan Agency for Planning (CMAP)
 
+## Partner institutions
+
+- Universidade Federal Fluminense (Brazil): co-develops the Autark toolkit
+- Fundação Getulio Vargas (Brazil): co-develops UrbanClipAtlas
+- University of California, Berkeley: urban design, mobility modeling and the Sidewalk Stewards system
+- Universidade Federal de Pernambuco (Brazil): evaluation of pedestrian network repair in Recife
+- Universidade Federal do Ceará (Brazil): home institution of a research intern at NYU
+- The University of Tokyo (Japan): co-develops LandmarkLens
+
 ## Collaborators
 
 ### Agencies & organizations
@@ -38,6 +47,9 @@ description: The advisory board, agencies, organizations, researchers and compan
 - National MS Society
 - Southwest Environmental Alliance
 - Easterseals Inc.
+- Chicago Public Schools
+- University of Toronto Mobility Network
+- CREATE, University of Washington
 
 ### Researchers
 
@@ -61,22 +73,31 @@ description: The advisory board, agencies, organizations, researchers and compan
 - Yochai Eisenberg; University of Illinois Chicago
 - Majid Ezzati; Imperial College London (England)
 - Ricky Nathvani; Pathways to Equitable Health in Cities, Imperial College London (England)
+- Nivan Ferreira; Universidade Federal de Pernambuco (Brazil)
+- Leah Findlater; University of Washington
 - Angelo Furno; University of Lyon (France)
-- Maryam Hosseini; MIT
+- Maryam Hosseini; University of California, Berkeley
+- Takeo Igarashi; The University of Tokyo (Japan)
+- Yingchao Jian; University of Washington
 - Vikas Khanna; University of Pittsburgh
-- Marcos Lage; Federal Fluminense University (Brazil)
+- Marcos Lage; Universidade Federal Fluminense (Brazil)
+- Claudio D. G. Linhares; Linnaeus University (Sweden)
+- Don MacKenzie; University of Washington
 - Jennifer Mankoff; CREATE, University of Washington
 - Jacob O. Wobbrock; CREATE, University of Washington
 - Atiya Mahmood; Simon Fraser University (Canada)
+- Sourav Medya; University of Illinois Chicago
 - Monica Menendez; CITIES, New York University (Abu Dhabi)
 - Christopher Mitchell; Geopipe, Inc.
 - Jose Moura; Carnegie Mellon University
 - Luis Gustavo Nonato; University of São Paulo (Brazil)
+- Daniel de Oliveira; Universidade Federal Fluminense (Brazil)
 - Kaan Ozbay; C2SMART, New York University
 - Michael E. Papka; SAGE, Argonne National Laboratory
-- Jorge Poco; Getulio Vargas Foundation (Brazil)
+- Jorge Poco; Fundação Getulio Vargas (Brazil)
 - Maurizio Porfiri; Director of CUSP, New York University
 - Meead Saberi; footpath.ai, University of New South Wales (Australia)
+- Yotam Sechayk; The University of Tokyo (Japan)
 - Judy Shanley; Easterseals Inc.; Unpaid Collaborator
 - Andrea Silverman; FloodNet, New York University
 - Aruna Sivakumar; Imperial College London (England)
@@ -89,3 +110,4 @@ description: The advisory board, agencies, organizations, researchers and compan
 - Geopipe, Inc.
 - footpath.ai
 - Microsoft Research
+- Google (Google.org Cloud credits)

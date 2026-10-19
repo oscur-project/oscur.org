@@ -9,12 +9,19 @@ institutions:
   - { id: nyu, name: New York University, short: NYU, url: "https://www.nyu.edu/" }
   - { id: uic, name: University of Illinois Chicago, short: UIC, url: "https://www.uic.edu/" }
   - { id: uw, name: University of Washington, short: UW, url: "https://www.washington.edu/" }
+  # Partner institutions named on software cards.
+  - { id: uff, name: Universidade Federal Fluminense, short: UFF, url: "https://www.uff.br/" }
+  - { id: fgv, name: Fundação Getulio Vargas, short: FGV, url: "https://portal.fgv.br/" }
+  - { id: berkeley, name: "University of California, Berkeley", short: UC Berkeley, url: "https://www.berkeley.edu/" }
+  - { id: utokyo, name: The University of Tokyo, short: U Tokyo, url: "https://www.u-tokyo.ac.jp/en/" }
 
 groups:
   - { id: pis, label: PIs, cards: true }
   - { id: scientists, label: Research scientists }
+  - { id: staff, label: Research staff }
   - { id: phd, label: PhD students }
-  - { id: interns, label: Interns }
+  - { id: students, label: Undergraduate and high school students }
+  - { id: interns, label: Interns and visiting students }
 
 people:
   # PIs
@@ -70,43 +77,38 @@ people:
     photo: /media/team/jfroehlich.webp
     aliases: [Jon E. Froehlich]
 
-
-  # Research scientists
-  - id: jrulff
-    name: Joao Rulff
-    institution: nyu
-    group: scientists
-    aliases: [João Rulff, João Lucas Rulff da Costa, João L. Rulff da Costa]
-  - id: ffelix
-    name: Fabio Felix
-    institution: nyu
-    group: scientists
+  # Research staff
+  - id: kfalcao
+    name: Karla Falcão
+    institution: uic
+    group: staff
+    role: Research software engineer
+  - id: msaugstad
+    name: Michael Saugstad
+    institution: uw
+    group: staff
+    role: Research software engineer
+    aliases: [Mikey Saugstad]
 
   # PhD students
   - id: scastelo
     name: Sonia Castelo
     institution: nyu
     group: phd
-  - id: ssrabanti
-    name: Sanjana Srabanti
+  - id: ewu
+    name: Eden Wu
+    institution: nyu
+    group: phd
+  - id: scobeli
+    name: Stefan Cobeli
     institution: uic
     group: phd
   - id: lferreira
     name: Leonardo Ferreira
     institution: uic
     group: phd
-  - id: gmoreira
-    name: Gustavo Moreira
-    url: "https://gmmuller.github.io"
-    institution: uic
-    group: phd
-    aliases: [Gustavo Muller Moreira]
-  - id: scobeli
-    name: Stefan Cobeli
-    institution: uic
-    group: phd
-  - id: kwang
-    name: Keira Wang
+  - id: pbaghershahi
+    name: Peyman Baghershahi
     institution: uic
     group: phd
   - id: komar
@@ -115,32 +117,126 @@ people:
     institution: uic
     group: phd
     aliases: [Kazi Shahrukh Omar]
+  - id: kwang
+    name: Keira Wang
+    institution: uic
+    group: phd
   - id: jhwang
     name: Jared Hwang
     institution: uw
     group: phd
-  - id: msaugstad
-    name: Mikey Saugstad
+  - id: chuli
+    name: Chu Li
     institution: uw
     group: phd
-    aliases: [Michael Saugstad]
+  - id: ljiang
+    name: Lucy Jiang
+    institution: uw
+    group: phd
+  - id: zwang
+    name: Zeyu Wang
+    institution: uw
+    group: phd
+  - id: avisokay
+    name: Adam Visokay
+    institution: uw
+    group: phd
+    note: Sociology
+
+  # Undergraduate and high school students
+  - id: lloch
+    name: Logan Loch
+    institution: uic
+    group: students
+  - id: sshannon
+    name: Shaun Shannon
+    institution: uic
+    group: students
+  - id: aquesada
+    name: Andres Quesada
+    institution: uic
+    group: students
+  - id: hmnnguyen
+    name: Ho Minh Nhat Nguyen
+    institution: uic
+    group: students
+  - id: dstyka
+    name: Dominik Styka
+    institution: uic
+    group: students
+  - id: jzhang
+    name: Jasmine Zhang
+    institution: uw
+    group: students
   - id: jomeara
     name: John O’Meara
     institution: uw
-    group: phd
+    group: students
+    note: Allen School from fall 2026
     aliases: [John S. O’Meara, John O'Meara, John S. O'Meara]
 
-  # Interns
-  - id: kpaz
-    name: Klayver Paz
-    institution: nyu
+  # Interns and visiting students
+  - id: rfilho
+    name: Renzo Filho
+    institution: uic
     group: interns
+    note: University of São Paulo
+  - id: lsouza
+    name: Lyncoln Souza de Oliveira
+    institution: uic
+    group: interns
+    note: Universidade Federal Fluminense
+    aliases: [Lyncoln Oliveira]
+  - id: lmelo
+    name: Luiza Melo
+    institution: uic
+    group: interns
+    note: Universidade Federal de Pernambuco
+  - id: ybi
+    name: Yangbo Bi
+    institution: uic
+    group: interns
+    note: University of Birmingham
   - id: tnguyen
     name: Tuan Duc Nguyen
     institution: uic
     group: interns
 
   # Alumni
+  - id: jrulff
+    name: Joao Rulff
+    institution: nyu
+    alumni: true
+    note: Now faculty at FGV’s School of Applied Mathematics
+    aliases: [João Rulff, João Lucas Rulff da Costa, João L. Rulff da Costa]
+  - id: ffelix
+    name: Fabio Felix
+    institution: nyu
+    alumni: true
+    note: Postdoctoral researcher until December 2025
+  - id: ssrabanti
+    name: Sanjana Srabanti
+    institution: uic
+    alumni: true
+    note: Ph.D. 2026
+  - id: gmoreira
+    name: Gustavo Moreira
+    url: "https://gmmuller.github.io"
+    institution: uic
+    alumni: true
+    note: Ph.D. 2026
+    aliases: [Gustavo Muller Moreira]
+  - id: kpaz
+    name: Klayver Bezerra Paz
+    institution: nyu
+    alumni: true
+    note: Research intern in 2025, from Universidade Federal do Ceará
+    aliases: [Klayver Paz]
+  - id: xlin
+    name: Xiangyu (Jason) Lin
+    institution: nyu
+    alumni: true
+    note: Undergraduate researcher in 2026
   - id: sprovost
     name: Simon Provost
     institution: nyu

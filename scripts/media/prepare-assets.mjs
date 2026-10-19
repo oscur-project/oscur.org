@@ -52,6 +52,26 @@ const PHOTOS = [
   { from: src('2024/07/JonFroehlich_PhotoByDennisWise.jpg'), to: 'team/jfroehlich.webp', extract: { left: 135, top: 15, width: 360, height: 360 } },
 ]
 
+// Pictures of the news posts that come from elsewhere: EVL's posts about the same events, and the projects' own
+// repositories.
+const EVL = 'https://www.evl.uic.edu/images'
+const NEWS = [
+  { from: `${EVL}/cities_in_motion_resized.png-srcw.jpg`, to: 'news/cities-in-motion-workshop-at-uic/cities-in-motion.webp' },
+  { from: `${EVL}/coe_awards2026.png-srcw.jpg`, to: 'news/coe-awards-for-gustavo-moreira-and-leonardo-ferreira/coe-awards-2026.webp' },
+  { from: `${EVL}/chuli_evl_visit_2026.png-srcw.jpg`, to: 'news/chu-li-visits-evl/chu-li-at-evl.webp' },
+  { from: `${EVL}/ssrabanti_phd_2026b.png-srcw.jpg`, to: 'news/sanjana-srabanti-defends-her-phd/defense.webp' },
+  { from: `${EVL}/gmoreira_phd_2026.jpg-srcw.jpg`, to: 'news/gustavo-moreira-defends-his-phd/defense.webp' },
+  { from: `${EVL}/froehlich_evl_2026.jpg-srcw.jpg`, to: 'news/jon-froehlich-seminar-at-evl/seminar.webp' },
+  {
+    from: 'https://raw.githubusercontent.com/VIDA-NYU/urbanTrace/main/docs/screenshots/urbantrace_v4_preview.png',
+    to: 'news/urbantrace-accepted-to-ieee-vis-2026/urbantrace.webp',
+  },
+  {
+    from: src('2024/07/JonFroehlich_PhotoByDennisWise.jpg'),
+    to: 'news/jon-froehlich-receives-the-2026-acm-sigchi-societal-impact-award/jon-froehlich.webp',
+  },
+]
+
 async function input(from) {
   if (!from.startsWith('http')) return fs.readFile(from)
   const res = await fetch(from, { headers: { 'User-Agent': 'oscur.org media (https://github.com/oscur-project/oscur.org)' } })
@@ -86,6 +106,10 @@ for (const { from, to, extract } of PHOTOS) {
   const image = sharp(await input(from))
   if (extract) image.extract(extract)
   await write(image.resize(320, 320, { fit: 'cover', position: 'attention', withoutEnlargement: true }).webp({ quality: 82 }), to)
+}
+
+for (const { from, to } of NEWS) {
+  await write(sharp(await input(from)).resize({ width: 1600, withoutEnlargement: true }).webp({ quality: 82 }), to)
 }
 
 // Open Graph image: the black wordmark on white, 1200x630, with a bar in the brand color.

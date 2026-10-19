@@ -5,4 +5,260 @@
 # links: kind is one of website, demo, docs, github, pypi, npm, data, model, archive, tutorials, video; the first
 # link is the primary button unless one says `primary: true`. institutions are ids from site/data/team.yaml.
 
-[]
+# Data discovery & integration
+- id: auctus
+  name: Auctus
+  tagline: Dataset search engine for data-driven and data-relationship queries
+  description: Indexes over 20,000 datasets, including the open-data portals of several US cities. A next generation, built to run as a hosted service over OSCUR’s urban collections, is in development.
+  topic: data
+  institutions: [nyu]
+  monogram: AU
+  links:
+    - { kind: website, url: "https://auctus.vida-nyu.org" }
+    - { kind: github, url: "https://github.com/VIDA-NYU/auctus" }
+    - { kind: github, url: "https://github.com/VIDA-NYU/auctus_v2", label: Next generation }
+
+- id: autoddg
+  name: AutoDDG
+  tagline: Accurate, readable descriptions of datasets, generated with LLMs
+  description: Combines data profiling with large language models, so that datasets with terse or missing metadata become findable by people and by AI agents. Its descriptions improved retrieval by up to 30%.
+  topic: data
+  institutions: [nyu]
+  monogram: AD
+  links:
+    - { kind: github, url: "https://github.com/VIDA-NYU/AutoDDG" }
+    - { kind: pypi, url: "https://pypi.org/project/autoddg/" }
+
+- id: atlas-profiler
+  name: Atlas-Profiler
+  tagline: Semantic profiling of datasets with LLMs, extending datamart-profiler
+  description: Improves the recognition of spatial and temporal attributes, the profiles that dataset search and integration build on.
+  topic: data
+  institutions: [nyu]
+  monogram: AP
+  links:
+    - { kind: github, url: "https://github.com/VIDA-NYU/atlas-profiler" }
+    - { kind: pypi, url: "https://pypi.org/project/atlas-profiler/" }
+
+- id: urbantrace
+  name: UrbanTrace
+  tagline: LLM-assisted discovery and semantics-aware integration of spatial data
+  description: Turns spatial data wrangling into a transparent, node-based workflow driven by context-aware AI agents, with a provenance graph that records how each transformation was derived.
+  topic: data
+  institutions: [nyu]
+  monogram: UT
+  links:
+    - { kind: github, url: "https://github.com/VIDA-NYU/urbanTrace" }
+
+- id: urbanmapper
+  name: UrbanMapper
+  tagline: Spatial enrichment of urban layers with Scikit-Learn-style pipelines
+  description: Links urban datasets to street networks, sidewalks, city features and administrative boundaries in reproducible, shareable pipelines.
+  topic: data
+  institutions: [nyu]
+  monogram: UM
+  links:
+    - { kind: github, url: "https://github.com/VIDA-NYU/UrbanMapper" }
+
+- id: oscur-data
+  name: OSCUR-data
+  tagline: Curated, profiled urban datasets for New York City
+  description: Sources across infrastructure, traveler behavior and safety, and urban context, documented and profiled for search, and published as analysis-ready datasets on Hugging Face.
+  topic: data
+  institutions: [nyu]
+  monogram: OD
+  links:
+    - { kind: data, url: "https://huggingface.co/oscur", label: Datasets on Hugging Face }
+    - { kind: github, url: "https://github.com/VIDA-NYU/OSCUR-data" }
+
+# Dataflows, workflows & provenance
+- id: curio
+  name: Curio
+  tagline: Dataflow framework for collaborative urban visual analytics
+  description: Organized around extensible data, node and agent catalogs, and used in UIC courses and with Chicago Public Schools.
+  topic: workflows
+  institutions: [uic]
+  logo: /media/software/curio/logo.webp
+  links:
+    - { kind: website, url: "https://curio.urbantk.org", label: Guide }
+    - { kind: demo, url: "https://flow.urbantk.org" }
+    - { kind: github, url: "https://github.com/urban-toolkit/curio" }
+    - { kind: pypi, url: "https://pypi.org/project/utk-curio/" }
+
+- id: urbanite
+  name: Urbanite
+  tagline: Dataflows for human-AI alignment in urban visual analytics
+  description: Lets analysts state their intent for a whole dataflow, a node or a parameter, with explanations and the provenance of their interactions.
+  topic: workflows
+  institutions: [uic]
+  logo: /media/software/urbanite/logo.webp
+  links:
+    - { kind: website, url: "https://urbantk.org/urbanite/", label: Project page }
+    - { kind: github, url: "https://github.com/urban-toolkit/urbanite" }
+
+- id: vistrailsjl
+  name: VisTrailsJL
+  tagline: VisTrails workflows and provenance, reimplemented in Julia
+  description: Action-based provenance with branching and merging, workflow replay and diff, notebook-defined workflows and git-native versioning, and it opens existing VisTrails files.
+  topic: workflows
+  institutions: [nyu]
+  monogram: VT
+  status: In development
+  links:
+    - { kind: github, url: "https://github.com/VIDA-NYU/VisTrailsJL" }
+
+# Visualization & visual analytics
+- id: autark
+  name: Autark
+  tagline: Serverless toolkit for prototyping urban visual analytics in the browser
+  description: Spatial data management, GPU computation, 3D maps and charts in one lightweight library, with abstractions designed to work well with AI-assisted coding.
+  topic: vis
+  institutions: [nyu, uic, uff]
+  logo: /media/software/autark/logo.svg
+  logoOnDark: /media/software/autark/logo-dark.svg
+  links:
+    - { kind: website, url: "https://autarkjs.org" }
+    - { kind: docs, url: "https://autarkjs.org/introduction", label: Get started }
+    - { kind: demo, url: "https://autarkjs.org/gallery/", label: Gallery }
+    - { kind: github, url: "https://github.com/urban-toolkit/autark" }
+    - { kind: npm, url: "https://www.npmjs.com/package/@urban-toolkit/autk" }
+    - { kind: archive, url: "https://osf.io/4tqp9/" }
+
+- id: utk
+  name: The Urban Toolkit
+  tagline: Grammar-based framework for urban visual analytics
+  description: A declarative grammar that integrates physical and thematic urban layers in 2D and 3D maps.
+  topic: vis
+  institutions: [uic]
+  logo: /media/software/utk/logo.webp
+  links:
+    - { kind: website, url: "https://urbantk.org/utk/", label: Project page }
+    - { kind: github, url: "https://github.com/urban-toolkit/utk" }
+    - { kind: pypi, url: "https://pypi.org/project/utk/" }
+
+- id: streetweave
+  name: StreetWeave
+  tagline: Declarative grammar for street-overlaid visualization of multivariate data
+  topic: vis
+  institutions: [uic]
+  logo: /media/software/streetweave/logo.webp
+  links:
+    - { kind: website, url: "https://urbantk.org/streetweave/", label: Project page }
+    - { kind: github, url: "https://github.com/urban-toolkit/streetweave" }
+
+- id: va-blueprint
+  name: VA-Blueprint
+  tagline: Knowledge base of the building blocks of visual analytics systems
+  description: A structured, machine-readable blueprint of how systems compose data processing, analysis, visualization and interaction, extracted from papers with LLMs.
+  topic: vis
+  institutions: [uic]
+  logo: /media/software/va-blueprint/logo.webp
+  links:
+    - { kind: website, url: "https://urbantk.org/va-blueprint/", label: Project page }
+    - { kind: github, url: "https://github.com/urban-toolkit/va-blueprint" }
+
+- id: neural-3d
+  name: Neural 3D views
+  tagline: Neural fields for view computation and data exploration in 3D cities
+  description: Encodes a 3D urban environment as an implicit field that answers direct and inverse queries about visibility, sunlight and the impact of new buildings.
+  topic: vis
+  institutions: [uic]
+  monogram: N3D
+  links:
+    - { kind: website, url: "https://urbantk.org/neural-3d/", label: Project page }
+    - { kind: github, url: "https://github.com/urban-toolkit/neural-3d" }
+
+- id: sidewalk-stewards
+  name: Sidewalk Stewards
+  tagline: Interactive topology repair of automatically extracted sidewalk networks
+  description: Detects disconnected components, dangling edges, missed connections and malformed intersections in networks from pipelines such as Tile2Net, and supports their repair with real-time quality feedback.
+  topic: vis
+  institutions: [uic, berkeley]
+  monogram: SS
+  links:
+    - { kind: website, url: "https://urbantk.org/sidewalk/", label: Project page }
+    - { kind: github, url: "https://github.com/urban-toolkit/sidewalk-stewards" }
+
+- id: scout
+  name: SCOUT
+  tagline: Scenario-oriented urban toolkit for decision support
+  topic: vis
+  institutions: [uic]
+  logo: /media/software/scout/logo.webp
+  links:
+    - { kind: website, url: "https://urbantk.org/scout/", label: Project page }
+    - { kind: github, url: "https://github.com/urban-toolkit/scout" }
+
+- id: urbanclipatlas
+  name: UrbanClipAtlas
+  tagline: Event and scene retrieval in long urban intersection videos
+  description: Combines retrieval-augmented generation, taxonomy-aware entity extraction and video grounding to make hours of street footage searchable in natural language.
+  topic: vis
+  institutions: [nyu, fgv]
+  monogram: UCA
+  links:
+    - { kind: github, url: "https://github.com/visual-ds/UrbanClipAtlas" }
+
+# AI & urban sensing
+- id: rampnet
+  name: RampNet
+  tagline: Curb ramp detection bootstrapped from open government data
+  description: Turns municipal curb ramp inventories into labels on more than 210,000 Street View panoramas and trains a detector on them. It runs in Project Sidewalk, labeling curb ramps for people to validate.
+  topic: ai
+  institutions: [uw]
+  monogram: RN
+  links:
+    - { kind: github, url: "https://github.com/ProjectSidewalk/RampNet" }
+    - { kind: data, url: "https://huggingface.co/datasets/projectsidewalk/rampnet-dataset", label: Dataset }
+    - { kind: model, url: "https://huggingface.co/projectsidewalk/rampnet-model" }
+    - { kind: data, url: "https://huggingface.co/datasets/projectsidewalk/rampnet-benchmark", label: Benchmark }
+    - { kind: github, url: "https://github.com/ProjectSidewalk/sidewalk-auto-labeler", label: Project Sidewalk deployment }
+
+- id: accessparkcv
+  name: AccessParkCV
+  tagline: Detecting disability parking and its quality from aerial imagery
+  topic: ai
+  institutions: [uw]
+  monogram: APC
+  links:
+    - { kind: github, url: "https://github.com/makeabilitylab/AccessParkCV" }
+    - { kind: data, url: "https://huggingface.co/datasets/makeabilitylab/disabilityparking", label: Dataset }
+    - { kind: data, url: "https://huggingface.co/datasets/makeabilitylab/AccessParkCV_coco", label: Dataset (COCO) }
+
+- id: gsvantage
+  name: GSVantage
+  tagline: Measuring socioeconomic bias in Street View coverage
+  description: A reproducible pipeline and dashboard that relate the age of Street View imagery to census indicators, so that analyses can account for coverage bias.
+  topic: ai
+  institutions: [uw]
+  monogram: GSV
+  links:
+    - { kind: github, url: "https://github.com/makeabilitylab/GSVantage" }
+
+- id: bikebutler
+  name: BikeButler
+  tagline: Personalized, context-sensitive bike routing from open data and VLMs
+  topic: ai
+  institutions: [uw]
+  monogram: BB
+  links:
+    - { kind: github, url: "https://github.com/makeabilitylab/BikeButler" }
+
+- id: artscape
+  name: ArtScape
+  tagline: Detecting and exploring urban art at city scale with VLMs
+  description: A five-stage VLM pipeline over Street View panoramas, and a screen-reader-accessible tool for finding, filtering and touring public art.
+  topic: ai
+  institutions: [uw]
+  monogram: AS
+  status: Code and benchmark to come
+
+- id: landmarklens
+  name: LandmarkLens
+  tagline: Predicting navigation landmarks with VLMs, shown in mixed reality
+  description: Comes with an open dataset of more than 3,000 360° street-view images with gaze and landmark annotations.
+  topic: ai
+  institutions: [uw, utokyo]
+  monogram: LL
+  links:
+    - { kind: github, url: "https://github.com/makeabilitylab/landmarklens", label: Code and dataset }

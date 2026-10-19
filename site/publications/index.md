@@ -5,6 +5,6 @@ description: Papers of the OSCUR project at New York University, the University 
 
 # Publications
 
-Papers of the OSCUR project, newest first. Journal papers are listed in the year of their issue.
+Papers of the OSCUR project, newest first. Journal papers are listed in the year of their issue. Filter them by topic, or find the software behind each paper on the [Software](/software/) page.
 
 <PapersPage />
