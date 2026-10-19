@@ -1,0 +1,173 @@
+# People of OSCUR. /team/ shows the groups below in order: the PIs as photo cards in one column per OSCUR
+# site, the others as lists, then alumni with what they do now. Author names in papers.bib that match a
+# person's `name` or one of their `aliases` link to the person's `url`.
+#
+# person: id, name, url, institution (an id below), group (an id below), role, photo, note, alumni,
+# listed (false: linked from papers but not on /team/), aliases
+
+institutions:
+  - { id: nyu, name: New York University, short: NYU, url: "https://www.nyu.edu/" }
+  - { id: uic, name: University of Illinois Chicago, short: UIC, url: "https://www.uic.edu/" }
+  - { id: uw, name: University of Washington, short: UW, url: "https://www.washington.edu/" }
+
+groups:
+  - { id: pis, label: PIs, cards: true }
+  - { id: scientists, label: Research scientists }
+  - { id: phd, label: PhD students }
+  - { id: interns, label: Interns }
+
+people:
+  # PIs
+  - id: csilva
+    name: Claudio Silva
+    url: "https://ctsilva.github.io/"
+    institution: nyu
+    group: pis
+    role: Lead PI
+    photo: /media/team/csilva.webp
+    aliases: [Cláudio Silva, Claudio T. Silva, Cláudio T. Silva, Claudio T Silva]
+  - id: jfreire
+    name: Juliana Freire
+    url: "https://engineering.nyu.edu/faculty/juliana-freire"
+    institution: nyu
+    group: pis
+    role: Co-PI
+    photo: /media/team/jfreire.webp
+  - id: gdove
+    name: Graham Dove
+    url: "https://www.codesignwithdata.com/"
+    institution: nyu
+    group: pis
+    role: Co-PI
+    photo: /media/team/gdove.webp
+  - id: fmiranda
+    name: Fabio Miranda
+    url: "https://fmiranda.me"
+    institution: uic
+    group: pis
+    role: UIC PI
+    photo: /media/team/fmiranda.webp
+  - id: sderrible
+    name: Sybil Derrible
+    url: "https://sybilderrible.com/"
+    institution: uic
+    group: pis
+    role: Co-PI
+    photo: /media/team/sderrible.webp
+  - id: ffusi
+    name: Federica Fusi
+    url: "http://fusifederica.weebly.com/"
+    institution: uic
+    group: pis
+    role: Senior personnel
+    photo: /media/team/ffusi.webp
+  - id: jfroehlich
+    name: Jon Froehlich
+    url: "https://jonfroehlich.github.io/"
+    institution: uw
+    group: pis
+    role: UW PI
+    photo: /media/team/jfroehlich.webp
+    aliases: [Jon E. Froehlich]
+
+
+  # Research scientists
+  - id: jrulff
+    name: Joao Rulff
+    institution: nyu
+    group: scientists
+    aliases: [João Rulff, João Lucas Rulff da Costa, João L. Rulff da Costa]
+  - id: ffelix
+    name: Fabio Felix
+    institution: nyu
+    group: scientists
+
+  # PhD students
+  - id: scastelo
+    name: Sonia Castelo
+    institution: nyu
+    group: phd
+  - id: ssrabanti
+    name: Sanjana Srabanti
+    institution: uic
+    group: phd
+  - id: lferreira
+    name: Leonardo Ferreira
+    institution: uic
+    group: phd
+  - id: gmoreira
+    name: Gustavo Moreira
+    url: "https://gmmuller.github.io"
+    institution: uic
+    group: phd
+    aliases: [Gustavo Muller Moreira]
+  - id: scobeli
+    name: Stefan Cobeli
+    institution: uic
+    group: phd
+  - id: kwang
+    name: Keira Wang
+    institution: uic
+    group: phd
+  - id: komar
+    name: Kazi Omar
+    url: "https://komar41.github.io/"
+    institution: uic
+    group: phd
+    aliases: [Kazi Shahrukh Omar]
+  - id: jhwang
+    name: Jared Hwang
+    institution: uw
+    group: phd
+  - id: msaugstad
+    name: Mikey Saugstad
+    institution: uw
+    group: phd
+    aliases: [Michael Saugstad]
+  - id: jomeara
+    name: John O’Meara
+    institution: uw
+    group: phd
+    aliases: [John S. O’Meara, John O'Meara, John S. O'Meara]
+
+  # Interns
+  - id: kpaz
+    name: Klayver Paz
+    institution: nyu
+    group: interns
+  - id: tnguyen
+    name: Tuan Duc Nguyen
+    institution: uic
+    group: interns
+
+  # Alumni
+  - id: sprovost
+    name: Simon Provost
+    institution: nyu
+    alumni: true
+    note: Now a Ph.D. student at the University of Kent
+  - id: jatkins
+    name: Jon Atkins
+    institution: nyu
+    alumni: true
+    note: Now a master’s student at UC Berkeley
+  - id: jasseraf
+    name: Judith Asseraf
+    institution: nyu
+    alumni: true
+  - id: amongillo
+    name: Annay Mongillo
+    institution: nyu
+    alumni: true
+  - id: jmahia
+    name: James Mahia
+    institution: uic
+    alumni: true
+  - id: supadhyayula
+    name: Shanmukh Upadhyayula
+    institution: uic
+    alumni: true
+  - id: spang
+    name: Sunshine Pang
+    institution: uic
+    alumni: true

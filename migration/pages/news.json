@@ -1,0 +1,53 @@
+{
+  "link": "/news/",
+  "title": "News & Events",
+  "modified": "2024-07-18T14:14:06",
+  "template": null,
+  "headings": [
+    "h2 News & Events",
+    "h4 UIC researchers join national project to turn urban data into healthier cities",
+    "h4 Urban computing to get a boost with new open-source platform funded by the National Science Foundation"
+  ],
+  "buttons": [
+    {
+      "href": "/2024/08/uic-researchers-join-national-project-to-turn-urban-data-into-healthier-cities/",
+      "text": "Read More"
+    },
+    {
+      "href": "/2024/08/urban-computing-nyu/",
+      "text": "Read More"
+    }
+  ],
+  "links": [
+    {
+      "href": "/2024/08/uic-researchers-join-national-project-to-turn-urban-data-into-healthier-cities/",
+      "text": ""
+    },
+    {
+      "href": "/2024/08/uic-researchers-join-national-project-to-turn-urban-data-into-healthier-cities/",
+      "text": "UIC researchers join national project to turn urban data into healthier cities"
+    },
+    {
+      "href": "/2024/08/uic-researchers-join-national-project-to-turn-urban-data-into-healthier-cities/",
+      "text": "Read More"
+    },
+    {
+      "href": "/2024/08/urban-computing-nyu/",
+      "text": ""
+    },
+    {
+      "href": "/2024/08/urban-computing-nyu/",
+      "text": "Urban computing to get a boost with new open-source platform funded by the National Science Foundation"
+    },
+    {
+      "href": "/2024/08/urban-computing-nyu/",
+      "text": "Read More"
+    }
+  ],
+  "images": [
+    "https://oscur.org/wp-content/uploads/2024/08/chicago_shadow_analysis-websize-e1724259925973-1024x683.webp",
+    "https://oscur.org/wp-content/uploads/2024/08/qtq80-RmGWHP-1024x681.jpeg"
+  ],
+  "videos": [],
+  "iframes": []
+}

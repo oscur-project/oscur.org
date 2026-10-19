@@ -1,0 +1,20 @@
+# Old URLs that now forward somewhere else. GitHub Pages has no server-side redirects, so the build writes a
+# small HTML page at each `from`. Year and month archives (/2024/, /2024/08/) are added automatically and must
+# not be listed here.
+#
+# WordPress redirects from the NYU post's earlier slugs (it was first published as testing-2):
+- from: /2024/08/testing-2/
+  to: /2024/08/urban-computing-nyu/
+- from: /urban-computing-nyu/
+  to: /2024/08/urban-computing-nyu/
+- from: /2024/08/02/urban-computing-nyu/
+  to: /2024/08/urban-computing-nyu/
+# WordPress's front page under its slug, its day archives and its author archive:
+- from: /home/
+  to: /
+- from: /2024/08/02/
+  to: "/news/#2024"
+- from: /2024/08/21/
+  to: "/news/#2024"
+- from: /author/admin/
+  to: /news/

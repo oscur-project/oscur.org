@@ -1,0 +1,21 @@
+{
+  "link": "/newsletter/",
+  "title": "OSCUR Newsletter",
+  "modified": "2024-08-23T18:40:28",
+  "template": null,
+  "headings": [
+    "h2 OSCUR Newsletter"
+  ],
+  "buttons": [],
+  "links": [
+    {
+      "href": "https://forms.gle/sg3nTSsYsgdZAGDM6",
+      "text": "this form"
+    }
+  ],
+  "images": [],
+  "videos": [],
+  "iframes": [
+    "https://docs.google.com/forms/d/e/1FAIpQLSeO5pHZ741vxl8Ow2sHHsFfSrF969QjZ7VXfDykT1vzler8ew/viewform?embedded=true"
+  ]
+}

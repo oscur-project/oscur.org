@@ -1,0 +1,26 @@
+# Every public URL of the WordPress site (exported by scripts/migrate/wp-export.mjs).
+# scripts/check/dist.mjs fails the build if one of them does not resolve to a page, a redirect stub or a file.
+/
+/2024/
+/2024/08/
+/2024/08/02/
+/2024/08/02/urban-computing-nyu/
+/2024/08/21/
+/2024/08/testing-2/
+/2024/08/uic-researchers-join-national-project-to-turn-urban-data-into-healthier-cities/
+/2024/08/urban-computing-nyu/
+/author/admin/
+/comments/feed/
+/feed/
+/home/
+/news/
+/news/feed/
+/newsletter/
+/overview/
+/partners/
+/publications/
+/sitemap.xml
+/software/
+/team/
+/urban-computing-nyu/
+/wp-sitemap.xml

@@ -1,0 +1,8 @@
+# The tools, datasets and platforms on /software/, by topic (site/data/topics.yaml) in this order. Each card is
+# an anchor, /software/#<id>, that the papers on /publications/ link to; a paper names its software in
+# papers.bib (`software = {id}`), and the card lists it.
+#
+# links: kind is one of website, demo, docs, github, pypi, npm, data, model, archive, tutorials, video; the first
+# link is the primary button unless one says `primary: true`. institutions are ids from site/data/team.yaml.
+
+[]
