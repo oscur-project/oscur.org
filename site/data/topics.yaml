@@ -1,0 +1,18 @@
+# The Software page's sections and the Publications page's filters, in the order of the urban data lifecycle.
+# `color` tints the topic's cards, tags and dots; contrast-safe variants for both themes are derived from it.
+- id: data
+  label: Data discovery & integration
+  description: Finding urban datasets, describing and profiling them, and combining them into analysis-ready data.
+  color: "#3c6e71"
+- id: workflows
+  label: Dataflows, workflows & provenance
+  description: Building analyses as dataflows that can be shared, reproduced and traced back to their steps.
+  color: "#a26a2a"
+- id: vis
+  label: Visualization & visual analytics
+  description: Grammars, toolkits and systems for exploring urban data on maps, in 3D and along streets.
+  color: "#2f6690"
+- id: ai
+  label: AI & urban sensing
+  description: Computer vision and AI pipelines that turn street-level and aerial imagery into urban data.
+  color: "#8a5a83"

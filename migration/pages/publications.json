@@ -1,0 +1,59 @@
+{
+  "link": "/publications/",
+  "title": "Publications",
+  "modified": "2025-10-01T19:15:33",
+  "template": null,
+  "headings": [
+    "h2 Publication"
+  ],
+  "buttons": [],
+  "links": [
+    {
+      "href": "http://Hwang_WhereCanIParkUnderstandingHumanPerspectivesAndScalablyDetectingDisabilityParkingFromAerialImagery_ASSETS2025",
+      "text": "PDF"
+    },
+    {
+      "href": "https://arxiv.org/abs/2508.07496",
+      "text": "ArXiv"
+    },
+    {
+      "href": "https://arxiv.org/abs/2508.07497",
+      "text": "ArXiv"
+    },
+    {
+      "href": "https://arxiv.org/abs/2508.07390",
+      "text": "ArXiv"
+    },
+    {
+      "href": "https://openreview.net/attachment?id=QGR1ceaSg2&name=pdf",
+      "text": "ArXiv"
+    },
+    {
+      "href": "https://dl.acm.org/doi/full/10.1145/3706598.3714299",
+      "text": "ACM DIgital Library"
+    },
+    {
+      "href": "https://arxiv.org/abs/2507.18972",
+      "text": "ArXiv"
+    },
+    {
+      "href": "https://arxiv.org/abs/2508.15752",
+      "text": "ArXiv"
+    },
+    {
+      "href": "https://arxiv.org/abs/2412.08194",
+      "text": "ArXiv"
+    },
+    {
+      "href": "http://sites.computer.org/debull/A25mar/p3.pdf",
+      "text": "PDF"
+    },
+    {
+      "href": "https://dl.acm.org/doi/10.1145/3736733.3736746",
+      "text": "ACM Digital Library"
+    }
+  ],
+  "images": [],
+  "videos": [],
+  "iframes": []
+}

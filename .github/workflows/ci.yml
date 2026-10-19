@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      # The blob-less clones of the impact repositories, so a run only fetches their new commits.
+      - uses: actions/cache@v6
+        with:
+          path: .cache/impact/repos
+          key: impact-repos-${{ github.run_id }}
+          restore-keys: impact-repos-
+
+      # The numbers behind /impact/, which the build needs.
+      - run: npm run impact
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      # Fails on dead Markdown links and invalid frontmatter, papers.bib, software.yaml, team.yaml or impact.yaml.
+      - run: npm run build
+
+      # Links in the built HTML, the old WordPress URLs, redirects and media budgets.
+      - run: npm run check

@@ -1,0 +1,66 @@
+{
+  "link": "/team/",
+  "title": "Team",
+  "modified": "2025-09-30T19:28:16",
+  "template": null,
+  "headings": [
+    "h2 Team",
+    "h3 PIs",
+    "h4 New York University",
+    "h5 Claudio Silva (Lead PI)",
+    "h5 Juliana Freire (Co-PI)",
+    "h5 Graham Dove (Co-PI)",
+    "h4 University of Illinois Chicago",
+    "h5 Fabio Miranda (UIC PI)",
+    "h5 Sybil Derrible (Co-PI)",
+    "h5 Federica Fusi (SP)",
+    "h4 University of Washington",
+    "h5 Jon Froehlich (UW PI)",
+    "h3 Research Scientists",
+    "h3 PhD Students",
+    "h3 Interns",
+    "h3 Alumni"
+  ],
+  "buttons": [],
+  "links": [
+    {
+      "href": "https://ctsilva.github.io/",
+      "text": "Claudio Silva"
+    },
+    {
+      "href": "https://engineering.nyu.edu/faculty/juliana-freire",
+      "text": "Juliana Freire"
+    },
+    {
+      "href": "https://www.codesignwithdata.com/",
+      "text": "Graham Dove"
+    },
+    {
+      "href": "https://fmiranda.me",
+      "text": "Fabio Miranda"
+    },
+    {
+      "href": "https://sybilderrible.com/",
+      "text": "Sybil Derrible"
+    },
+    {
+      "href": "http://fusifederica.weebly.com/",
+      "text": "Federica Fusi"
+    },
+    {
+      "href": "https://jonfroehlich.github.io/",
+      "text": "Jon Froehlich"
+    }
+  ],
+  "images": [
+    "https://oscur.org/wp-content/uploads/2024/07/csilva.jpg",
+    "https://oscur.org/wp-content/uploads/2024/07/juliana-friere.jpg",
+    "https://oscur.org/wp-content/uploads/2024/07/gdphoto1.jpg",
+    "https://oscur.org/wp-content/uploads/2024/07/fabio-miranda-6-large.jpg",
+    "https://oscur.org/wp-content/uploads/2024/07/id_pic.jpg",
+    "https://oscur.org/wp-content/uploads/2024/07/UIC-MPA-Faculty_Fusi_Federica-1090x1090-1.jpg",
+    "https://oscur.org/wp-content/uploads/2024/07/JonFroehlich_PhotoByDennisWise.jpg"
+  ],
+  "videos": [],
+  "iframes": []
+}

@@ -1,0 +1,76 @@
+/* OSCUR navy, carried over from the WordPress site's header and headings. In dark mode links use a lighter
+   navy (7:1 on the dark background) and buttons a mid navy that keeps white text at 4.6:1. */
+:root {
+  --oscur-navy: #284b63;
+  --vp-c-brand-1: #284b63;
+  --vp-c-brand-2: #1a3e55;
+  --vp-c-brand-3: #284b63;
+  --vp-c-brand-soft: rgba(40, 75, 99, 0.12);
+  --vp-nav-logo-height: 28px;
+
+  --oscur-radius: 12px;
+  --oscur-radius-sm: 8px;
+  --oscur-shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.08);
+  --oscur-max: 1152px;
+  --oscur-text-max: 760px;
+}
+
+.dark {
+  --vp-c-brand-1: #85abc6;
+  --vp-c-brand-2: #7398b3;
+  --vp-c-brand-3: #547992;
+  --vp-c-brand-soft: rgba(133, 171, 198, 0.16);
+  --oscur-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* The colors of the home page's diagrams (site/diagrams/*.svg), by role. Each SVG repeats the light values as
+   fallbacks, so it also renders on its own. */
+:root {
+  --oscur-dg-ink: #1f1f1f;        /* text, outlines, icons */
+  --oscur-dg-ink-2: #6b6b6b;      /* secondary lines: dashed circles, thin rules, line art */
+  --oscur-dg-panel: #f2f2f2;      /* a panel's own background */
+  --oscur-dg-surface: #ffffff;    /* boxes and discs on a panel */
+  --oscur-dg-surface-2: #e8e8e8;  /* gray discs behind icons */
+  --oscur-dg-blue: #4f81bd;       /* strong blue fills: the OSCUR box, the USA, arrows */
+  --oscur-dg-on-blue: #ffffff;    /* text and icons on strong blue */
+  --oscur-dg-blue-soft: #c9d6e6;  /* the light blue disc */
+  --oscur-dg-blue-text: #3b6db0;  /* blue words: Health…, OSCUR's own tools */
+  --oscur-dg-green: #70ad47;      /* partner countries */
+  --oscur-dg-green-text: #4a7a2c; /* green words: US states */
+  --oscur-dg-land: #fafafa;       /* map land */
+  --oscur-dg-sea: #d5dadc;        /* map sea */
+  --oscur-dg-border: #c9c9c9;     /* country borders */
+}
+
+.dark {
+  --oscur-dg-ink: #e4e4e4;
+  --oscur-dg-ink-2: #9a9a9f;
+  --oscur-dg-panel: #232327;
+  --oscur-dg-surface: #2b2b30;
+  --oscur-dg-surface-2: #38383e;
+  --oscur-dg-blue: #3c6aa3;
+  --oscur-dg-on-blue: #ffffff;
+  --oscur-dg-blue-soft: #253447;
+  --oscur-dg-blue-text: #8db5e6;
+  --oscur-dg-green: #3a7026;
+  --oscur-dg-green-text: #9fd47c;
+  --oscur-dg-land: #3b3b41;
+  --oscur-dg-sea: #26262b;
+  --oscur-dg-border: #57575e;
+}
+
+/* Inside a topic (its section and cards on the Software page), the brand colors become the topic's accent.
+   --p-light is readable on white, --p-dark on the dark background; both are computed at build time. */
+.oscur-accent {
+  --vp-c-brand-1: var(--p-light);
+  --vp-c-brand-2: color-mix(in srgb, var(--p-light) 82%, #000);
+  --vp-c-brand-3: var(--p-light);
+  --vp-c-brand-soft: color-mix(in srgb, var(--p-raw) 13%, transparent);
+}
+
+.dark .oscur-accent {
+  --vp-c-brand-1: var(--p-dark);
+  --vp-c-brand-2: color-mix(in srgb, var(--p-dark) 82%, #fff);
+  --vp-c-brand-3: var(--p-light);
+  --vp-c-brand-soft: color-mix(in srgb, var(--p-raw) 18%, transparent);
+}

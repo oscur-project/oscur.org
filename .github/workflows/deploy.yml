@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Daily, so the impact history records Hugging Face downloads and Curio accounts even without a push.
+  schedule:
+    - cron: '23 6 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - uses: actions/configure-pages@v6
+
+      - run: npm ci
+
+      # The blob-less clones of the impact repositories, so a run only fetches their new commits.
+      - uses: actions/cache@v6
+        with:
+          path: .cache/impact/repos
+          key: impact-repos-${{ github.run_id }}
+          restore-keys: impact-repos-
+
+      # Stars, commits, downloads, Hugging Face statistics, Curio's examples and datasets, and the papers' use
+      # cases for /impact/.
+      - run: npm run impact
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - run: npm run build
+
+      - run: npm run check
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site/.vitepress/dist
+
+      - uses: actions/deploy-pages@v5
+        id: deployment

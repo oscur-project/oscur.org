@@ -1,0 +1,292 @@
+# The inputs behind /impact/. Stars, commits, downloads, Hugging Face statistics, Curio's examples and datasets,
+# and the papers' use cases are collected by `npm run impact` (scripts/impact/collect.mjs) on every deploy; this
+# file says what to count, and holds the rows only the team can report.
+
+# Year 1 starts on this day and every year runs twelve months, as the NSF awards do. The page shows the finished
+# years and the current one "so far".
+award:
+  start: 2024-09-01
+  years: 5
+
+# The npm organization that owns the packages below. A `*` in an npm name matches any run of characters among
+# its packages, and the deploy log warns about a package of it that no tool counts, unless it is in `npmSkip`.
+npmOrg: urban-toolkit
+# Earlier names of the packages below, which are not counted.
+npmSkip: ['@urban-toolkit/the-urban-grammar', autk-compute, autk-db, autk-map, autk-plot]
+
+# The tools behind the software rows, in table order: their repositories and their PyPI, npm and Hugging Face
+# packages. `software` is an id in site/data/software.yaml (ArtScape has no repository yet). Hugging Face names
+# are datasets/<owner>/<name> or models/<owner>/<name>; a `*` matches any run of characters among the owner's.
+software:
+  - { software: auctus, repos: [VIDA-NYU/auctus, VIDA-NYU/auctus_v2] }
+  - { software: autoddg, repos: [VIDA-NYU/AutoDDG], pypi: [autoddg] }
+  - { software: atlas-profiler, repos: [VIDA-NYU/atlas-profiler], pypi: [atlas-profiler] }
+  - { software: urbantrace, repos: [VIDA-NYU/urbanTrace] }
+  - { software: urbanmapper, repos: [VIDA-NYU/UrbanMapper] }
+  - { software: oscur-data, repos: [VIDA-NYU/OSCUR-data], huggingface: ['datasets/oscur/*'] }
+  - { software: curio, repos: [urban-toolkit/curio], pypi: [utk-curio] }
+  - { software: urbanite, repos: [urban-toolkit/urbanite] }
+  - { software: vistrailsjl, repos: [VIDA-NYU/VisTrailsJL] }
+  - { software: autark, repos: [urban-toolkit/autark], npm: ['@urban-toolkit/autk*'] }
+  - { software: utk, repos: [urban-toolkit/utk], pypi: [utk] }
+  - { software: streetweave, repos: [urban-toolkit/streetweave] }
+  - { software: va-blueprint, repos: [urban-toolkit/va-blueprint] }
+  - { software: neural-3d, repos: [urban-toolkit/neural-3d] }
+  - { software: sidewalk-stewards, repos: [urban-toolkit/sidewalk-stewards] }
+  - { software: scout, repos: [urban-toolkit/scout] }
+  - { software: urbanclipatlas, repos: [visual-ds/UrbanClipAtlas] }
+  - software: rampnet
+    repos: [ProjectSidewalk/RampNet, ProjectSidewalk/sidewalk-auto-labeler]
+    huggingface: ['datasets/projectsidewalk/rampnet-*', 'models/projectsidewalk/rampnet-*']
+  - software: accessparkcv
+    repos: [makeabilitylab/AccessParkCV]
+    huggingface: [datasets/makeabilitylab/AccessParkCV_coco, datasets/makeabilitylab/disabilityparking]
+  - { software: gsvantage, repos: [makeabilitylab/GSVantage] }
+  - { software: bikebutler, repos: [makeabilitylab/BikeButler] }
+  - { software: landmarklens, repos: [makeabilitylab/landmarklens] }
+
+# Contributors from these institutions are not external. A person belongs to one when a commit email is under one
+# of its domains, when team.yaml places them there, or when their GitHub profile's company or bio matches one of
+# its patterns (regular expressions, case-insensitive).
+internal:
+  - id: nyu
+    name: New York University
+    domains: [nyu.edu]
+    profile: ['New York University', '\bNYU\b']
+  - id: uic
+    name: University of Illinois Chicago
+    domains: [uic.edu]
+    profile: ['University of Illinois (at )?Chicago', '\bUIC\b']
+  - id: uw
+    name: University of Washington
+    domains: [uw.edu, washington.edu]
+    profile: ['University of Washington', '\bUW\b', 'Makeability']
+
+# Commit identities of one person that share no email, name or GitHub account (`ids`: author names, emails or
+# GitHub logins), and the institution of people nothing else places.
+people:
+  - ids: [Vinícius Costa, Vinícius de Lima Costa]
+  - ids: [Karla, Karla Falcão]
+  - ids: [tuanduc8t1, ducnt2406]
+  - ids: [Abhishikth_Pammi, pammi abhishikth]
+  - ids: [João Rulff, joaorulff]
+    institution: nyu
+  # Beck Zhou also commits as 周, once from NYU's VPN.
+  - ids: [Beck Zhou, zhou@macbookpro.mynetworksettings.com, zhou@b-10-27-65-162.dynapool.vpn.nyu.edu]
+  # Judith Asseraf, an NYU intern in 2025.
+  - ids: [JUDITH-sketch]
+    institution: nyu
+  # A merge commit in RampNet under a placeholder identity.
+  - ids: [x@y]
+    institution: uw
+
+# Curio's use cases and curated datasets come from its repository. Examples in its gallery that show a feature
+# rather than an urban analysis are not use cases.
+curio:
+  repo: urban-toolkit/curio
+  demos: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26]
+  # Examples that reproduce a use case one of the papers presents: the Autark paper's Chicago shadows (07) and
+  # Niterói heat (08). They count once, as the paper's, and the data they read counts as curated for it. The
+  # what-if shadows (06) and Milan heat (09) reproduce the Curio paper, which predates OSCUR and is not on its
+  # Publications page, so here they count as gallery examples.
+  inPapers: [7, 8]
+
+# Papers whose use cases are not urban: TiVy's are ECG signals and stock prices.
+nonUrbanPapers: [chan2026tivy]
+
+# Curio's hosted instances. Users at large are the accounts their public monitor API reports as registered (the
+# shared guest account is not one). Every deploy adds the day's counts, and the Hugging Face totals, to
+# `history`, published with the site, so a finished year keeps its numbers.
+instances:
+  - https://flow.urbantk.org
+  - https://dev.urbantk.org
+history: https://oscur.org/impact/history.json
+# Set this to the day of the first deploy to oscur.org once its history.json is published.
+# historySince: 2026-11-01
+
+# All-time Hugging Face downloads at the ends of the award years before the history began, from the public
+# cfahlgren1/hub-stats snapshots (node scripts/impact/hf-backfill.mjs writes them).
+huggingfaceSnapshots:
+  - day: 2025-08-31
+    source: 'cfahlgren1/hub-stats, datasets@5066f9fe, models@9d10362f'
+    downloads:
+      'datasets/makeabilitylab/disabilityparking': 334
+      'datasets/oscur/NYC_1M_mta_bus_hourly': 113
+      'datasets/oscur/NYC_1M_mta_subway_hourly': 111
+      'datasets/oscur/NYC_311': 206
+      'datasets/oscur/NYC_Bi_Annual_Pedestrian_Counts': 34
+      'datasets/oscur/NYC_NYCHA_residential_sites': 109
+      'datasets/oscur/NYC_bicycle_counts': 35
+      'datasets/oscur/NYC_bicycle_facilities': 110
+      'datasets/oscur/NYC_community_health_survey': 34
+      'datasets/oscur/NYC_curb_infrastructure': 116
+      'datasets/oscur/NYC_facilities': 99
+      'datasets/oscur/NYC_ferry_ridership': 100
+      'datasets/oscur/NYC_final_disadvantaged_communities': 27
+      'datasets/oscur/NYC_fixed_obstructions_on_sidewalks': 110
+      'datasets/oscur/NYC_heat_vulnerability': 117
+      'datasets/oscur/NYC_historic_land_use': 108
+      'datasets/oscur/NYC_housing_density': 27
+      'datasets/oscur/NYC_intercity_bus_stops': 111
+      'datasets/oscur/NYC_issued_licenses': 104
+      'datasets/oscur/NYC_motor_vehicle_crashes': 118
+      'datasets/oscur/NYC_motor_vehicle_persons': 110
+      'datasets/oscur/NYC_on_street_curb_management': 123
+      'datasets/oscur/NYC_open_space': 116
+      'datasets/oscur/NYC_parks': 114
+      'datasets/oscur/NYC_pedestrian_intervals': 34
+      'datasets/oscur/NYC_public_open_spaces': 111
+      'datasets/oscur/NYC_rail_routes_and_crossings': 113
+      'datasets/oscur/NYC_raised_crosswalk': 119
+      'datasets/oscur/NYC_roadway_features': 35
+      'datasets/oscur/NYC_sidewalk_surface_condition': 117
+      'datasets/oscur/NYC_sidewalks_with_land_use': 116
+      'datasets/oscur/NYC_signals_markings_signs': 140
+      'datasets/oscur/NYC_socioeconomic_and_demographic': 36
+      'datasets/oscur/NYC_speed_distributions': 44
+      'datasets/oscur/NYC_speed_humps': 173
+      'datasets/oscur/NYC_subway_stations': 111
+      'datasets/oscur/NYC_topography': 37
+      'datasets/oscur/NYC_transit_stop_accessibility': 127
+      'datasets/oscur/NYC_tree_cover_landscaping': 113
+      'datasets/oscur/NYC_truck_routes': 99
+      'datasets/oscur/NYC_urban_design_and_frontage': 111
+      'datasets/oscur/NYC_vehicle_collisions': 414
+      'datasets/oscur/NYC_vehicle_collisions_issue': 153
+      'datasets/oscur/NYC_vehicle_volume_and_types': 25
+      'datasets/oscur/automated-traffic-volume-counts': 153
+      'datasets/oscur/automated-traffic-volume-counts-sample': 128
+      'datasets/oscur/pluto': 623
+      'datasets/oscur/taxisvis1M': 515
+      'datasets/projectsidewalk/rampnet-crop-model-dataset-round2': 359
+      'datasets/projectsidewalk/rampnet-dataset': 1015
+      'models/projectsidewalk/rampnet-model': 170
+  - day: 2026-08-31
+    source: 'cfahlgren1/hub-stats, datasets@62de802b, models@d2b01c05'
+    downloads:
+      'datasets/makeabilitylab/AccessParkCV_coco': 594
+      'datasets/makeabilitylab/disabilityparking': 4528
+      'datasets/oscur/NYC_1M_mta_bus_hourly': 366
+      'datasets/oscur/NYC_1M_mta_subway_hourly': 429
+      'datasets/oscur/NYC_311': 1641
+      'datasets/oscur/NYC_Bi_Annual_Pedestrian_Counts': 255
+      'datasets/oscur/NYC_NYCHA_residential_sites': 330
+      'datasets/oscur/NYC_bicycle_counts': 316
+      'datasets/oscur/NYC_bicycle_facilities': 316
+      'datasets/oscur/NYC_community_health_survey': 2937
+      'datasets/oscur/NYC_curb_infrastructure': 416
+      'datasets/oscur/NYC_facilities': 309
+      'datasets/oscur/NYC_ferry_ridership': 379
+      'datasets/oscur/NYC_final_disadvantaged_communities': 240
+      'datasets/oscur/NYC_fixed_obstructions_on_sidewalks': 456
+      'datasets/oscur/NYC_heat_vulnerability': 345
+      'datasets/oscur/NYC_historic_land_use': 302
+      'datasets/oscur/NYC_housing_density': 273
+      'datasets/oscur/NYC_intercity_bus_stops': 381
+      'datasets/oscur/NYC_issued_licenses': 580
+      'datasets/oscur/NYC_motor_vehicle_crashes': 402
+      'datasets/oscur/NYC_motor_vehicle_persons': 325
+      'datasets/oscur/NYC_on_street_curb_management': 617
+      'datasets/oscur/NYC_open_space': 357
+      'datasets/oscur/NYC_parks': 320
+      'datasets/oscur/NYC_pedestrian_intervals': 257
+      'datasets/oscur/NYC_public_open_spaces': 344
+      'datasets/oscur/NYC_rail_routes_and_crossings': 333
+      'datasets/oscur/NYC_raised_crosswalk': 297
+      'datasets/oscur/NYC_roadway_features': 316
+      'datasets/oscur/NYC_sidewalk_surface_condition': 517
+      'datasets/oscur/NYC_sidewalks_with_land_use': 656
+      'datasets/oscur/NYC_signals_markings_signs': 513
+      'datasets/oscur/NYC_socioeconomic_and_demographic': 492
+      'datasets/oscur/NYC_speed_distributions': 369
+      'datasets/oscur/NYC_speed_humps': 1935
+      'datasets/oscur/NYC_subway_stations': 444
+      'datasets/oscur/NYC_topography': 301
+      'datasets/oscur/NYC_transit_stop_accessibility': 567
+      'datasets/oscur/NYC_tree_cover_landscaping': 384
+      'datasets/oscur/NYC_truck_routes': 367
+      'datasets/oscur/NYC_urban_design_and_frontage': 299
+      'datasets/oscur/NYC_vehicle_collisions': 1140
+      'datasets/oscur/NYC_vehicle_collisions_issue': 296
+      'datasets/oscur/NYC_vehicle_volume_and_types': 224
+      'datasets/oscur/automated-traffic-volume-counts': 520
+      'datasets/oscur/automated-traffic-volume-counts-sample': 397
+      'datasets/oscur/pluto': 2371
+      'datasets/oscur/taxisvis1M': 1809
+      'datasets/projectsidewalk/rampnet-benchmark': 125
+      'datasets/projectsidewalk/rampnet-crop-model-dataset-round1': 75
+      'datasets/projectsidewalk/rampnet-crop-model-dataset-round2': 2536
+      'datasets/projectsidewalk/rampnet-dataset': 9841
+      'datasets/projectsidewalk/rampnet-stage1-inputs': 132
+      'models/projectsidewalk/rampnet-crop-model': 0
+      'models/projectsidewalk/rampnet-model': 2839
+
+# Rows reported by the team, from the NSF annual reports. Each item has a `date` or an award `year`; a year
+# without items shows 0.
+deployments: []
+
+datasets:
+  - name: LandmarkLens dataset
+    detail: 3,000+ 360-degree street-view images with gaze and landmark annotations, University of Washington
+    url: https://github.com/makeabilitylab/landmarklens
+    year: 2
+
+workshops:
+  - name: 'OSCUR: A Platform for Understanding Urban Data'
+    detail: Demonstration and introduction at the NYC School of Data conference, by Graham Dove and Fabio Miranda
+    year: 1
+  - name: Workshop on Vision Foundation Models and Generative AI for Accessibility (CV4A11y)
+    detail: ICCV 2025 in Honolulu, co-organized by Jon Froehlich and Chu Li; 16 papers and six invited speakers
+    date: 2025-10-20
+  - name: 'Cities in Motion: Transportation Data Innovation Challenge'
+    detail: UIC with the University of Toronto and the Chicago Metropolitan Agency for Planning
+    date: 2026-04-29
+    attendance: 30
+
+hackathons:
+  - name: 'Cities in Motion: Transportation Data Innovation Challenge'
+    detail: Hackathon on real-world transportation and urban data, at UIC
+    date: 2026-04-29
+    attendance: 30
+
+tutorials:
+  - name: 'Autark in Action: Building Serverless Prototypes of Urban Visual Analytics Systems'
+    detail: SIBGRAPI 2026, Tutorials Track
+    date: 2026-08-20
+
+courses:
+  - name: 'CS 424: Visualization & Visual Analytics'
+    detail: UIC, Fall 2025, 61 students, with Curio
+    year: 2
+  - name: 'CS 524: Big Data Visualization & Analytics'
+    detail: UIC, Spring 2026, 22 students, with Curio
+    year: 2
+
+internships:
+  - name: UrbanMapper
+    detail: PhD intern at NYU, University of Kent
+    year: 1
+  - name: Raster data in UrbanMapper
+    detail: Undergraduate intern at NYU, ENSTA Paris
+    year: 1
+  - name: StreetTransformer benchmark
+    detail: Graduate intern at NYU, UC Berkeley
+    year: 1
+  - name: Raster operations for urban analytics
+    detail: Research intern at NYU, Universidade Federal do Ceará
+    year: 2
+  - name: Curio for street-level data collection (SideSeeing)
+    detail: Undergraduate intern at UIC, University of São Paulo
+    year: 2
+  - name: Interaction provenance in Curio
+    detail: PhD intern at UIC, Universidade Federal Fluminense
+    year: 2
+  - name: Sidewalk Stewards evaluation
+    detail: Master's intern at UIC, Federal University of Pernambuco
+    year: 2
+  - name: Research visit
+    detail: PhD intern at UIC, University of Birmingham
+    year: 2
+  - name: Curio redevelopment and deployment
+    detail: Three undergraduates at UIC, Early Access to Paid Internships Program
+    year: 2

@@ -1,0 +1,313 @@
+/* Layout: keep the footer at the bottom of short pages. */
+#app,
+.Layout,
+.VPContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.Layout {
+  min-height: 100dvh;
+}
+
+.Layout .VPContent {
+  flex: 1 0 auto;
+}
+
+/* Home hero: the text on the left, the OSCUR emblem (the frontmatter's hero image) on the right. */
+.VPHome .VPHero {
+  padding-top: 88px;
+  padding-bottom: 24px;
+}
+
+.VPHero .actions .VPButton {
+  min-width: 96px;
+  padding: 0 14px;
+  text-align: center;
+}
+
+@media (min-width: 960px) {
+  .VPHero .name,
+  .VPHero .text {
+    font-size: 48px !important;
+    line-height: 1.12 !important;
+  }
+
+  .VPHero .tagline {
+    font-size: 17px !important;
+    line-height: 1.65 !important;
+  }
+
+  .VPHero.has-image .main {
+    max-width: 640px;
+  }
+}
+
+/* Keep the appearance toggle and GitHub link in the bar instead of the "..." menu (from autarkjs.org). */
+@media (min-width: 768px) {
+  .VPNavBar .VPNavBarAppearance,
+  .VPNavBar .VPNavBarSocialLinks {
+    display: flex !important;
+    align-items: center;
+  }
+
+  .VPNavBar .VPNavBarExtra {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .VPNavBar .VPNavBarMenuLink,
+  .VPNavBar .VPNavBarMenuGroup .button {
+    padding: 0 6px !important;
+  }
+
+  .VPNavBar .content-body .appearance::before,
+  .VPNavBar .content-body .social-links::before {
+    display: none !important;
+  }
+}
+
+/* The menu has eight entries; below 1200px the mobile menu takes over, so the full bar never crowds. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .VPNavBar .VPNavBarMenu {
+    display: none !important;
+  }
+
+  .VPNavBar .VPNavBarHamburger {
+    display: flex !important;
+  }
+
+  /* The screen menu only exists while it is open (v-if), so unhiding it here is safe. */
+  .VPNavScreen {
+    display: block !important;
+  }
+}
+
+.oscur-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--oscur-dot);
+  vertical-align: 1px;
+}
+
+/* Shared building blocks. */
+.oscur-container {
+  max-width: var(--oscur-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.oscur-section {
+  padding: 56px 0 8px;
+}
+
+.oscur-section-header {
+  margin-bottom: 28px;
+}
+
+.oscur-section-title {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: var(--vp-c-brand-1);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.oscur-section-divider {
+  width: 72px;
+  height: 3px;
+  margin-top: 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--vp-c-brand-2), var(--vp-c-brand-1));
+}
+
+.oscur-section-lead {
+  margin: 12px 0 0;
+  max-width: var(--oscur-text-max);
+  color: var(--vp-c-text-2);
+  line-height: 1.7;
+}
+
+.oscur-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Each rule also names `.vp-doc a.oscur-button`, to outrank VitePress's `.vp-doc a` (a brand color and an
+   underline) when a component puts the buttons in a page's content. */
+.oscur-button,
+.vp-doc a.oscur-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  min-height: 40px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+.oscur-button:hover,
+.vp-doc a.oscur-button:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  transform: translateY(-1px);
+}
+
+.oscur-button--primary,
+.vp-doc a.oscur-button--primary {
+  border-color: var(--vp-c-brand-3);
+  background: var(--vp-c-brand-3);
+  color: #fff;
+}
+
+.oscur-button--primary:hover,
+.vp-doc a.oscur-button--primary:hover {
+  border-color: var(--vp-c-brand-2);
+  background: var(--vp-c-brand-2);
+  color: #fff;
+}
+
+.oscur-button svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+.oscur-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.oscur-link-more {
+  display: inline-flex;
+  margin-top: 24px;
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.oscur-link-more:hover {
+  text-decoration: underline;
+}
+
+.oscur-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* News posts and plain pages read better a little narrower than the default doc width. */
+.VPDoc .content-container {
+  max-width: var(--oscur-text-max) !important;
+}
+
+.vp-doc img {
+  border-radius: var(--oscur-radius-sm);
+}
+
+/* Wide pages (frontmatter pageClass: oscur-wide), the Software and Impact pages: the full container width
+   instead of the reading width. VitePress caps the doc column with scoped styles, hence the !important. */
+.oscur-wide .VPDoc .container,
+.oscur-wide .VPDoc .content,
+.oscur-wide .VPDoc .content-container {
+  max-width: var(--oscur-max) !important;
+}
+
+/* The home page's Markdown: as wide as the menu, prose at a reading width, figures beside their text. */
+.VPHome .vp-doc.container {
+  max-width: calc(var(--oscur-max) + 128px);
+}
+
+.VPHome .vp-doc .oscur-container {
+  padding: 0;
+}
+
+.oscur-home > p,
+.oscur-home > .custom-block {
+  max-width: var(--oscur-text-max);
+}
+
+.oscur-home h2,
+.oscur-home h3 {
+  color: var(--vp-c-brand-1);
+}
+
+.oscur-split {
+  display: grid;
+  gap: 8px 40px;
+  align-items: center;
+  margin: 40px 0;
+}
+
+@media (min-width: 960px) {
+  .oscur-split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.oscur-split > div > :first-child {
+  margin-top: 0;
+}
+
+.oscur-figure {
+  margin: 0;
+}
+
+.oscur-figure img {
+  margin: 0 auto;
+  border-radius: var(--oscur-radius-sm);
+}
+
+.oscur-figure figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--vp-c-text-2);
+}
+
+/* Diagrams are drawn on white or light gray; in dark mode they sit on a light tile so their labels stay readable. */
+.dark .oscur-figure img {
+  padding: 8px;
+  background: #fff;
+}
+
+/* The home page's diagrams are SVG, inlined so they follow the theme: their colors are the --oscur-dg-* variables. */
+.oscur-figure .oscur-dg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* An image in a version for each theme: the page shows the one that matches. */
+.dark .oscur-only-light,
+html:not(.dark) .oscur-only-dark {
+  display: none;
+}

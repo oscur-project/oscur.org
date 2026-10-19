@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="oscur-dg" viewBox="0 0 1180 1126" width="1180" height="1126"
+     role="img" aria-labelledby="vision-title">
+  <title id="vision-title">OSCUR’s urban cyberinfrastructure for data discovery, curation and transformation, data management, analytics and visualization, serving city agencies, researchers, residents, policy makers, infrastructure and smart city systems, toward healthier, more accessible, sustainable and resilient cities</title>
+  <style>
+    .oscur-dg text { font-family: var(--vp-font-family-base, Inter, ui-sans-serif, system-ui, sans-serif); }
+    .oscur-dg .dg-ink { fill: var(--oscur-dg-ink, #1f1f1f); }
+    .oscur-dg .dg-ink-2 { fill: var(--oscur-dg-ink-2, #6b6b6b); }
+    .oscur-dg .dg-panel { fill: var(--oscur-dg-panel, #f2f2f2); }
+    .oscur-dg .dg-surface { fill: var(--oscur-dg-surface, #ffffff); }
+    .oscur-dg .dg-surface-2 { fill: var(--oscur-dg-surface-2, #e8e8e8); }
+    .oscur-dg .dg-blue { fill: var(--oscur-dg-blue, #4f81bd); }
+    .oscur-dg .dg-on-blue { fill: var(--oscur-dg-on-blue, #ffffff); }
+    .oscur-dg .dg-blue-soft { fill: var(--oscur-dg-blue-soft, #c9d6e6); }
+    .oscur-dg .dg-blue-text { fill: var(--oscur-dg-blue-text, #3b6db0); }
+    .oscur-dg .dg-green { fill: var(--oscur-dg-green, #70ad47); }
+    .oscur-dg .dg-green-text { fill: var(--oscur-dg-green-text, #4a7a2c); }
+    .oscur-dg .dg-land { fill: var(--oscur-dg-land, #fafafa); }
+    .oscur-dg .dg-sea { fill: var(--oscur-dg-sea, #d5dadc); }
+    .oscur-dg .dg-no-fill { fill: none; }
+    .oscur-dg .dg-s-ink { stroke: var(--oscur-dg-ink, #1f1f1f); }
+    .oscur-dg .dg-s-ink-2 { stroke: var(--oscur-dg-ink-2, #6b6b6b); }
+    .oscur-dg .dg-s-blue { stroke: var(--oscur-dg-blue, #4f81bd); }
+    .oscur-dg .dg-s-border { stroke: var(--oscur-dg-border, #c9c9c9); }
+    .oscur-dg .dg-s-surface { stroke: var(--oscur-dg-surface, #ffffff); }
+    .oscur-dg .dg-halo { paint-order: stroke fill; stroke: var(--oscur-dg-surface, #ffffff); stroke-linejoin: round; }
+  </style>
+  <!-- Icons: Font Awesome Free 6 (CC BY 4.0), https://fontawesome.com/license/free -->
+  <defs>
+    <!-- baseline of the four blue words: a circle run clockwise from its bottom point -->
+    <path id="vision-ring" d="M587 1113.7A550.5 550.5 0 0 1 587 12.7A550.5 550.5 0 0 1 587 1113.7"/>
+  </defs>
+
+  <!-- Outer circle, open under the four words -->
+  <g class="dg-no-fill dg-s-ink" stroke-width="3">
+    <path d="M70.6 344.1A561 561 0 0 1 266.3 102.9"/>
+    <path d="M414.3 29.5A561 561 0 0 1 855.9 70.8"/>
+    <path d="M1070.7 279A561 561 0 0 1 1118.3 383.2"/>
+    <path d="M1130.6 701.9A561 561 0 0 1 26.3 582.7"/>
+  </g>
+
+  <!-- Health, Accessibility, Sustainability, Resilience, set along the outer circle -->
+  <g class="dg-blue-text" font-size="46.5" font-weight="700" text-anchor="middle">
+    <text><textPath href="#vision-ring" startOffset="965.6">Resilience</textPath></text>
+    <text><textPath href="#vision-ring" startOffset="1475.8">Health</textPath></text>
+    <text><textPath href="#vision-ring" startOffset="2153.2">Accessibility</textPath></text>
+    <text><textPath href="#vision-ring" startOffset="2573">Sustainability</textPath></text>
+  </g>
+
+  <!-- Light-blue disc with a dashed outline -->
+  <circle class="dg-blue-soft dg-s-ink-2" cx="587" cy="571.3" r="456.1" stroke-width="2" stroke-dasharray="14.5 5.4"/>
+
+  <!-- Stakeholders on the dashed circle: disc, icon, label -->
+  <g font-size="31" font-weight="700" text-anchor="middle">
+    <!-- City agencies -->
+    <g>
+      <circle class="dg-surface dg-s-ink" cx="587.2" cy="122.2" r="64.5" stroke-width="2.2"/>
+      <svg x="545.2" y="80.2" width="84" height="84" viewBox="0 0 512 512"><path class="dg-ink" d="M272 0l80 0c8.8 0 16 7.2 16 16l0 64c0 8.8-7.2 16-16 16l-80 0 0 32 192 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L48 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l192 0 0-112c0-8.8 7.2-16 16-16l16 0zM64 224l64 0 0 192 40 0 0-192 64 0 0 192 48 0 0-192 64 0 0 192 40 0 0-192 64 0 0 196.3c.6 .3 1.2 .7 1.8 1.1l48 32c11.7 7.8 17 22.4 12.9 35.9S494.1 512 480 512L32 512c-14.1 0-26.5-9.2-30.6-22.7s1.1-28.1 12.9-35.9l48-32c.6-.4 1.2-.7 1.8-1.1L64 224z"/></svg>
+      <text class="dg-ink" x="587.2" y="224">City agencies</text>
+    </g>
+    <!-- Researchers -->
+    <g>
+      <circle class="dg-surface dg-s-ink" cx="953.9" cy="282.4" r="64.5" stroke-width="2.2"/>
+      <svg x="912.9" y="249.6" width="82" height="65.6" viewBox="0 0 640 512"><path class="dg-ink" d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM609.3 512l-137.8 0c5.4-9.4 8.6-20.3 8.6-32l0-8c0-60.7-27.1-115.2-69.8-151.8c2.4-.1 4.7-.2 7.1-.2l61.4 0C567.8 320 640 392.2 640 481.3c0 17-13.8 30.7-30.7 30.7zM432 256c-31 0-59-12.6-79.3-32.9C372.4 196.5 384 163.6 384 128c0-26.8-6.6-52.1-18.3-74.3C384.3 40.1 407.2 32 432 32c61.9 0 112 50.1 112 112s-50.1 112-112 112z"/></svg>
+      <text class="dg-ink" x="956" y="384">Researchers</text>
+    </g>
+    <!-- Residents -->
+    <g>
+      <circle class="dg-surface dg-s-ink" cx="949" cy="787.7" r="64.5" stroke-width="2.2"/>
+      <svg x="904" y="751.7" width="90" height="72" viewBox="0 0 640 512"><path class="dg-ink" d="M72 88a56 56 0 1 1 112 0A56 56 0 1 1 72 88zM64 245.7C54 256.9 48 271.8 48 288s6 31.1 16 42.3l0-84.7zm144.4-49.3C178.7 222.7 160 261.2 160 304c0 34.3 12 65.8 32 90.5l0 21.5c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-26.8C26.2 371.2 0 332.7 0 288c0-61.9 50.1-112 112-112l32 0c24 0 46.2 7.5 64.4 20.3zM448 416l0-21.5c20-24.7 32-56.2 32-90.5c0-42.8-18.7-81.3-48.4-107.7C449.8 183.5 472 176 496 176l32 0c61.9 0 112 50.1 112 112c0 44.7-26.2 83.2-64 101.2l0 26.8c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32zm8-328a56 56 0 1 1 112 0A56 56 0 1 1 456 88zM576 245.7l0 84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zM320 32a64 64 0 1 1 0 128 64 64 0 1 1 0-128zM240 304c0 16.2 6 31 16 42.3l0-84.7c-10 11.3-16 26.1-16 42.3zm144-42.3l0 84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zM448 304c0 44.7-26.2 83.2-64 101.2l0 42.8c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-42.8c-37.8-18-64-56.5-64-101.2c0-61.9 50.1-112 112-112l32 0c61.9 0 112 50.1 112 112z"/></svg>
+      <text class="dg-ink" x="949" y="890">Residents</text>
+    </g>
+    <!-- Policy makers -->
+    <g>
+      <circle class="dg-surface dg-s-ink" cx="587.2" cy="1004" r="64.5" stroke-width="2.2"/>
+      <svg x="544.2" y="965.8" width="86" height="76.4" viewBox="0 0 576 512"><path class="dg-ink" d="M0 80l0 48c0 17.7 14.3 32 32 32l16 0 48 0 0-80c0-26.5-21.5-48-48-48S0 53.5 0 80zM112 32c10 13.4 16 30 16 48l0 304c0 35.3 28.7 64 64 64s64-28.7 64-64l0-5.3c0-32.4 26.3-58.7 58.7-58.7L480 320l0-192c0-53-43-96-96-96L112 32zM464 480c61.9 0 112-50.1 112-112c0-8.8-7.2-16-16-16l-245.3 0c-14.7 0-26.7 11.9-26.7 26.7l0 5.3c0 53-43 96-96 96l176 0 96 0z"/></svg>
+      <text class="dg-ink" x="587.2" y="1105">Policy makers</text>
+    </g>
+    <!-- Smart city systems -->
+    <g>
+      <circle class="dg-surface dg-s-ink" cx="227.9" cy="787.7" r="64.5" stroke-width="2.2"/>
+      <svg x="183.9" y="752.5" width="88" height="70.4" viewBox="0 0 640 512"><path class="dg-ink" d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"/></svg>
+      <text class="dg-ink" x="227.9" y="890">Smart city</text>
+      <text class="dg-ink" x="227.9" y="927">systems</text>
+    </g>
+    <!-- Infrastructure -->
+    <g>
+      <circle class="dg-surface dg-s-ink" cx="203.5" cy="282.5" r="64.5" stroke-width="2.2"/>
+      <svg x="159.5" y="247.3" width="88" height="70.4" viewBox="0 0 640 512"><path class="dg-ink" d="M288 48c0-26.5 21.5-48 48-48l96 0c26.5 0 48 21.5 48 48l0 144 40 0 0-72c0-13.3 10.7-24 24-24s24 10.7 24 24l0 72 24 0c26.5 0 48 21.5 48 48l0 224c0 26.5-21.5 48-48 48l-160 0-96 0c-26.5 0-48-21.5-48-48l0-416zm64 32l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm16 80c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM352 272l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm176-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM512 368l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zM224 160c0 6-1 11-2 16c20 14 34 38 34 64c0 45-36 80-80 80l-16 0 0 160c0 18-15 32-32 32c-18 0-32-14-32-32l0-160-16 0c-45 0-80-35-80-80c0-26 13-50 33-64c-1-5-1-10-1-16c0-53 42-96 96-96c53 0 96 43 96 96z"/></svg>
+      <text class="dg-ink" x="203.5" y="384">Infrastructure</text>
+    </g>
+  </g>
+
+  <!-- OSCUR box and its tools -->
+  <g>
+    <rect class="dg-blue dg-s-ink" x="313" y="308.5" width="548" height="525.5" rx="25" stroke-width="2"/>
+    <g font-size="30" font-weight="700" text-anchor="middle">
+      <!-- Data discovery -->
+      <g>
+        <circle class="dg-surface dg-s-ink" cx="468.2" cy="388.5" r="64.5" stroke-width="2.2"/>
+        <svg x="427.2" y="347.5" width="82" height="82" viewBox="0 0 512 512"><path class="dg-ink" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+        <text class="dg-on-blue" x="468.2" y="489">Data discovery</text>
+      </g>
+      <!-- Curation & transformation: a cone and a cube with a curved arrow (drawn) -->
+      <g>
+        <circle class="dg-surface dg-s-ink" cx="704.7" cy="388.5" r="64.5" stroke-width="2.2"/>
+        <g stroke-linejoin="round" stroke-linecap="round">
+          <!-- cone: lit side outlined, shaded side solid -->
+          <path class="dg-no-fill dg-s-ink" stroke-width="3" d="M688 342L715.7 388.3M677 394.3A27.7 6.5 0 0 0 715.7 388.3"/>
+          <path class="dg-ink dg-s-ink" stroke-width="2" d="M688 342L660.3 388.3A27.7 6.5 0 0 0 677 394.3Z"/>
+          <!-- cube: left face solid, top and right faces outlined -->
+          <path class="dg-surface dg-s-ink" stroke-width="3.5" d="M694.5 385L723 371.7L751.5 385L751.5 422L723 435.3L694.5 422ZM723 398.3L751.5 385"/>
+          <path class="dg-ink dg-s-ink" stroke-width="3.5" d="M694.5 385L723 398.3L723 435.3L694.5 422Z"/>
+          <!-- curved arrow from the cube back to the cone -->
+          <path class="dg-no-fill dg-s-ink" stroke-width="3.5" d="M740.6 369.9A25 25 0 0 0 719.6 353.1"/>
+          <path class="dg-ink dg-s-ink" stroke-width="1.5" d="M705.5 353.2L717.5 346.2L717.5 360.2Z"/>
+        </g>
+        <text class="dg-on-blue" x="704.7" y="489">Curation &amp;</text>
+        <text class="dg-on-blue" x="704.7" y="527">transformation</text>
+      </g>
+      <!-- Data management -->
+      <g>
+        <circle class="dg-surface dg-s-ink" cx="411.3" cy="671.5" r="64.5" stroke-width="2.2"/>
+        <svg x="370.2" y="624.5" width="82.2" height="94" viewBox="0 0 448 512"><path class="dg-ink" d="M448 80l0 48c0 44.2-100.3 80-224 80S0 172.2 0 128L0 80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6L448 288c0 44.2-100.3 80-224 80S0 332.2 0 288L0 186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6l0 85.9c0 44.2-100.3 80-224 80S0 476.2 0 432l0-85.9z"/></svg>
+        <text class="dg-on-blue" x="411.3" y="773">Data</text>
+        <text class="dg-on-blue" x="411.3" y="811">management</text>
+      </g>
+      <!-- Analytics: a network of six nodes (drawn) -->
+      <g>
+        <circle class="dg-surface dg-s-ink" cx="588" cy="671.5" r="64.5" stroke-width="2.2"/>
+        <g class="dg-s-ink">
+          <path class="dg-no-fill" stroke-width="3.5" d="M588.1 633.9L551 649M588.1 633.9L625 672.7M588.1 633.9L550.7 693M551 649L588.2 668.4M551 649L588.2 709.1M588.2 668.4L625 672.7M588.2 668.4L588.2 709.1M625 672.7L588.2 709.1M550.7 693L588.2 709.1"/>
+          <g class="dg-surface" stroke-width="3">
+            <circle cx="588.1" cy="633.9" r="11.5"/>
+            <circle cx="551" cy="649" r="11.5"/>
+            <circle cx="588.2" cy="668.4" r="9.3"/>
+            <circle cx="625" cy="672.7" r="11.5"/>
+            <circle cx="550.7" cy="693" r="11.5"/>
+            <circle cx="588.2" cy="709.1" r="11.5"/>
+          </g>
+        </g>
+        <text class="dg-on-blue" x="588" y="773">Analytics</text>
+      </g>
+      <!-- Visualization -->
+      <g>
+        <circle class="dg-surface dg-s-ink" cx="764.2" cy="671.5" r="64.5" stroke-width="2.2"/>
+        <svg x="724.2" y="625.8" width="80" height="91.4" viewBox="0 0 448 512"><path class="dg-ink" d="M160 80c0-26.5 21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 352c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48l0-352zM0 272c0-26.5 21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 160c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48L0 272zM368 96l32 0c26.5 0 48 21.5 48 48l0 288c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48z"/></svg>
+        <text class="dg-on-blue" x="764.2" y="773">Visualization</text>
+      </g>
+    </g>
+    <text class="dg-on-blue" x="587" y="588" font-size="68" font-weight="800" text-anchor="middle">OSCUR</text>
+  </g>
+
+  <!-- Caption -->
+  <text class="dg-ink" x="587" y="869" font-size="36" text-anchor="middle">Urban cyberinfrastructure</text>
+</svg>

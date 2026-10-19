@@ -1,0 +1,13 @@
+{
+  "name": "oscur-scripts",
+  "private": true,
+  "type": "module",
+  "description": "Tooling for the site that CI does not need: the WordPress migration and media processing.",
+  "devDependencies": {
+    "he": "^1.2.0",
+    "hyparquet": "^1.31.5",
+    "sharp": "^0.35.4",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2"
+  }
+}
