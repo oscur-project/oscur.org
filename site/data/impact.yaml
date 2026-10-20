@@ -101,8 +101,8 @@ instances:
   - https://flow.urbantk.org
   - https://dev.urbantk.org
 history: https://oscur.org/impact/history.json
-# Set this to the day of the first deploy to oscur.org once its history.json is published.
-# historySince: 2026-11-01
+# The day the published history begins; from then on a deploy that cannot read it fails instead of starting over.
+historySince: 2026-10-20
 
 # All-time Hugging Face downloads at the ends of the award years before the history began, from the public
 # cfahlgren1/hub-stats snapshots (node scripts/impact/hf-backfill.mjs writes them).

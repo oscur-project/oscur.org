@@ -349,7 +349,7 @@ async function history(url, since) {
     // Before historySince, the history may not be readable yet (the site's first deploy, a domain that has just
     // moved): start a new one. After, any failure stops the run.
     if (since) throw error
-    console.log(`impact history: ${error.message}; starting a new history`)
+    console.log(`${error.message}; starting a new history`)
     return []
   }
 }
