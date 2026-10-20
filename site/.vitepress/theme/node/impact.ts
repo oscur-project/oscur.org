@@ -583,14 +583,14 @@ export function loadImpact(): Impact {
       ...hubOwners.map((owner) => ({ label: `Hugging Face: ${owner}`, url: `https://huggingface.co/${owner}` })),
       { label: "Curio’s Data Catalog", url: `${curioRepo}/tree/main/datasets` },
       { label: "Curio’s example data", url: `${curioRepo}/tree/main/docs/examples/data` },
-      { label: "The team’s figures, in impact.yaml", url: `${siteRepo}/site/data/impact.yaml` },
     ],
     'use-cases': [
       { label: "Curio’s example gallery", url: `${curioRepo}/blob/main/docs/README.md#examples` },
       { label: 'Publications, read from their HTML versions on arXiv', url: `${SITE.hostname}/publications/` },
     ],
     publications: [{ label: 'Publications', url: `${SITE.hostname}/publications/` }],
-    reported: [{ label: "The team’s figures, in impact.yaml", url: `${siteRepo}/site/data/impact.yaml` }],
+    // The rows the team reports name no source: their entry says "Reported by the team".
+    reported: [],
   }
   const method: ImpactLink[] = [
     { label: 'Collector: scripts/impact/collect.mjs', url: `${siteRepo}/scripts/impact/collect.mjs` },
@@ -613,7 +613,8 @@ export function loadImpact(): Impact {
       label: 'Cloud Environment',
       rows: [users, counted('deployments', 'External cloud deployments', bucket(reportedItems(config.deployments)))],
     },
-    { label: 'Urban Data', rows: [counted('datasets', 'Curated datasets', datasets), hubRow] },
+    // The datasets are too many to list; their entry names where they come from.
+    { label: 'Urban Data', rows: [{ ...counted('datasets', 'Curated datasets', datasets), items: null }, hubRow] },
     {
       label: 'Community metrics',
       rows: [
